@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="DexignZone">
+	<meta name="robots" content="">
+	<meta name="keywords" content="applicant, candidate, career, companies, employment, freelancer, job board, job directory, Job guru, job listing, job posting, job seeker, recruiting, resume, resume listing">
+	<meta name="description" content="JobBoard: is a flexible and smooth theme to make it simple as possible to create a professional job portal website. It covers all the features that are necessary for job board like searching option, login and register.">
+	<meta property="og:title" content="Job Board - Job Portal HTML Template + RTL and Dark layout">
+	<meta property="og:description" content="JobBoard: is a flexible and smooth theme to make it simple as possible to create a professional job portal website. It covers all the features that are necessary for job board like searching option, login and register.">
+	<meta property="og:image" content="social-image.png">
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- MOBILE SPECIFIC -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- FAVICONS ICON -->
+	<link rel="icon" href="{{ asset('frontend/images/favicon.ico') }}" type="image/x-icon">
+
+	<!-- PAGE TITLE HERE -->
+	<title>Job Board - Job Portal HTML Template + RTL and Dark layout</title>
+
+	<!--[if lt IE 9]>
+	<script src="{{ asset('frontend/js/html5shiv.min.js') }}"></script>
+	<script src="{{ asset('frontend/js/respond.min.js') }}"></script>
+	<![endif]-->
+	
+	<!-- STYLESHEETS -->
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/plugins.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/templete.css') }}">
+	<link class="skin" rel="stylesheet" type="text/css" href="{{ asset('frontend/css/skin/skin-1.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/dark-layout.css') }}">
+
+	
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com/">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&amp;family=Montserrat:wght@100;200;300;400;500;600;700;800;900&amp;family=Roboto:wght@100;300;400;500;700;900&amp;family=Rubik:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+
+
+</head>
+<body id="bg">
+<div id="loading-area"></div>
+<div class="page-wraper">
+	<!-- header -->
+    <header class="site-header mo-left header fullwidth">
+    @include('frontend.layouts.nav')
+</header>
+    <!-- header END -->
+    <!-- Content -->
+    <div class="page-content">
+		<!-- Section Banner -->
+		<div class="dez-bnr-inr dez-bnr-inr-md main-slider" style="background-image:url({{ asset('frontend/images/main-slider/slide2.jpg') }});">
+            <div class="container">
+                <div class="dez-bnr-inr-entry align-m">
+					<div class="find-job-bx">
+						<a href="javascript:void(0);" class="site-button button-sm">Find Jobs, Employment & Career Opportunities</a>
+						<h2>Search Between More Then <br/> <span class="text-primary">50,000</span> Open Jobs.</h2>
+						<form class="dezPlaceAni" action="https://job-board.dexignzone.com/xhtml/category-all-jobs.html">
+							<div class="row">
+								<div class="col-lg-4 col-md-6">
+									<div class="form-group">
+										<label>Job Title, Keywords, or Phrase</label>
+										<div class="input-group">
+											<input type="text" class="form-control" placeholder="">
+											<div class="input-group-append">
+												<span class="input-group-text"><i class="fa fa-search"></i></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-6">
+									<div class="form-group">
+										<label>City, State or ZIP</label>
+										<div class="input-group">
+											<input type="text" class="form-control" placeholder="">
+											<div class="input-group-append">
+											  <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-6">
+									<div class="form-group">
+										<select>
+											<option>Select Sector</option>
+											<option>Construction</option>
+											<option>Corodinator</option>
+											<option>Employer</option>
+											<option>Financial Career</option>
+											<option>Information Technology</option>
+											<option>Marketing</option>
+											<option>Quality check</option>
+											<option>Real Estate</option>
+											<option>Sales</option>
+											<option>Supporting</option>
+											<option>Teaching</option> 
+										</select>
+									</div>
+								</div>
+								<div class="col-lg-2 col-md-6">
+									<button type="submit" class="site-button btn-block">Find Job</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+            </div>
+        </div>
+		<!-- Section Banner END -->
+        <!-- About Us -->
+		<div class="section-full job-categories content-inner-2 bg-white">
+			<div class="container">
+				<div class="section-head d-flex head-counter clearfix">
+					<div class="me-auto">
+						<h2 class="m-b5">Popular Categories</h2>
+						<h6 class="fw3">20+ Catetories work wating for you</h6>
+					</div>
+					<div class="head-counter-bx">
+						<h2 class="m-b5 counter">1800</h2>
+						<h6 class="fw3">Jobs Posted</h6>
+					</div>
+					<div class="head-counter-bx">
+						<h2 class="m-b5 counter">4500</h2>
+						<h6 class="fw3">Tasks Posted</h6>
+					</div>
+					<div class="head-counter-bx">
+						<h2 class="m-b5 counter">1500</h2>
+						<h6 class="fw3">Freelancers</h6>
+					</div>
+				</div>
+				<div class="row sp20">
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="icon-bx-wraper">
+							<div class="icon-content">
+								<div class="icon-md text-primary m-b20"><i class="ti-location-pin"></i></div>
+								<a href="{{ url('company-manage-job') }}" class="dez-tilte">Design, Art & Multimedia</a>
+								<p class="m-a0">198 Open Positions</p>
+								<div class="rotate-icon"><i class="ti-location-pin"></i></div> 
+							</div>
+						</div>				
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="icon-bx-wraper">
+							<div class="icon-content">
+								<div class="icon-md text-primary m-b20"><i class="ti-wand"></i></div>
+								<a href="{{ url('company-manage-job') }}" class="dez-tilte">Education Training</a>
+								<p class="m-a0">198 Open Positions</p>
+								<div class="rotate-icon"><i class="ti-wand"></i></div> 
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="icon-bx-wraper">
+							<div class="icon-content">
+								<div class="icon-md text-primary m-b20"><i class="ti-wallet"></i></div>
+								<a href="{{ url('company-manage-job') }}" class="dez-tilte">Accounting / Finance</a>
+								<p class="m-a0">198 Open Positions</p>
+								<div class="rotate-icon"><i class="ti-wallet"></i></div> 
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="icon-bx-wraper">
+							<div class="icon-content">
+								<div class="icon-md text-primary m-b20"><i class="ti-cloud-up"></i></div>
+								<a href="{{ url('company-manage-job') }}" class="dez-tilte">Human Resource</a>
+								<p class="m-a0">198 Open Positions</p>
+								<div class="rotate-icon"><i class="ti-cloud-up"></i></div> 
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="icon-bx-wraper">
+							<div class="icon-content">
+								<div class="icon-md text-primary m-b20"><i class="ti-bar-chart"></i></div>
+								<a href="{{ url('company-manage-job') }}" class="dez-tilte">Telecommunications</a>
+								<p class="m-a0">198 Open Positions</p>
+								<div class="rotate-icon"><i class="ti-bar-chart"></i></div> 
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="icon-bx-wraper">
+							<div class="icon-content">
+								<div class="icon-md text-primary m-b20"><i class="ti-tablet"></i></div>
+								<a href="{{ url('company-manage-job') }}" class="dez-tilte">Restaurant / Food Service</a>
+								<p class="m-a0">198 Open Positions</p>
+								<div class="rotate-icon"><i class="ti-tablet"></i></div> 
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="icon-bx-wraper">
+							<div class="icon-content">
+								<div class="icon-md text-primary m-b20"><i class="ti-camera"></i></div>
+								<a href="{{ url('company-manage-job') }}" class="dez-tilte">Construction / Facilities</a>
+								<p class="m-a0">198 Open Positions</p>
+								<div class="rotate-icon"><i class="ti-camera"></i></div> 
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="icon-bx-wraper">
+							<div class="icon-content">
+								<div class="icon-md text-primary m-b20"><i class="ti-panel"></i></div>
+								<a href="{{ url('company-manage-job') }}" class="dez-tilte">Health</a>
+								<p class="m-a0">198 Open Positions</p>
+								<div class="rotate-icon"><i class="ti-panel"></i></div> 
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-12 text-center m-t30">
+						<a href="{{ url('category-all-jobs') }}" class="site-button radius-xl">All Categories</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- About Us END -->
+		<!-- Call To Action -->
+		<div class="section-full content-inner bg-gray">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 section-head text-center">
+						<h2 class="m-b5">Featured Cities</h2>
+						<h6 class="fw4 m-b0">20+ Featured Cities Added Jobs</h6>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3 col-sm-6 col-md-6 m-b30">
+						<a href="javascript:void(0);">
+							<div class="city-bx align-items-end  d-flex" style="background-image:url({{ asset('frontend/images/city/pic1.jpg') }})">
+								<div class="city-info">
+									<h5>Iraq</h5>
+									<span>765 Jobs</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-lg-3 col-sm-6 col-md-6 m-b30">
+						<a href="javascript:void(0);">
+							<div class="city-bx align-items-end  d-flex" style="background-image:url({{ asset('frontend/images/city/pic2.jpg') }})">
+								<div class="city-info">
+									<h5>Argentina</h5>
+									<span>352 Jobs</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-lg-3 col-sm-6 col-md-6 m-b30">
+						<a href="javascript:void(0);">
+							<div class="city-bx align-items-end  d-flex" style="background-image:url({{ asset('frontend/images/city/pic3.jpg') }})">
+								<div class="city-info">
+									<h5>Indonesia</h5>
+									<span>893 Jobs</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-lg-3 col-sm-6 col-md-6 m-b30">
+						<a href="javascript:void(0);">
+							<div class="city-bx align-items-end  d-flex" style="background-image:url({{ asset('frontend/images/city/pic4.jpg') }})">
+								<div class="city-info">
+									<h5>Gambia</h5>
+									<span>502 Jobs</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-lg-3 col-sm-6 col-md-6 m-b30">
+						<a href="javascript:void(0);">
+							<div class="city-bx align-items-end  d-flex" style="background-image:url({{ asset('frontend/images/city/pic5.jpg') }})">
+								<div class="city-info">
+									<h5>India</h5>
+									<span>765 Jobs</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-lg-3 col-sm-6 col-md-6 m-b30">
+						<a href="javascript:void(0);">
+							<div class="city-bx align-items-end  d-flex" style="background-image:url({{ asset('frontend/images/city/pic6.jpg') }})">
+								<div class="city-info">
+									<h5>Thailand</h5>
+									<span>352 Jobs</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-lg-3 col-sm-6 col-md-6 m-b30">
+						<a href="javascript:void(0);">
+							<div class="city-bx align-items-end  d-flex" style="background-image:url({{ asset('frontend/images/city/pic7.jpg') }})">
+								<div class="city-info">
+									<h5>Banjul</h5>
+									<span>893 Jobs</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-lg-3 col-sm-6 col-md-6 m-b30">
+						<a href="javascript:void(0);">
+							<div class="city-bx align-items-end  d-flex" style="background-image:url({{ asset('frontend/images/city/pic8.jpg') }})">
+								<div class="city-info">
+									<h5>Spain</h5>
+									<span>502 Jobs</span>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Call To Action END -->
+		<!-- Our Job -->
+		<div class="section-full bg-white content-inner-2">
+			<div class="container">
+				<div class="d-flex job-title-bx section-head">
+					<div class="me-auto">
+						<h2 class="m-b5">Recent Jobs</h2>
+						<h6 class="fw4 m-b0">20+ Recently Added Jobs</h6>
+					</div>
+					<div class="align-self-end">
+						<a href="{{ url('category-all-jobs') }}" class="site-button button-sm">Browse All Jobs <i class="fas fa-long-arrow-alt-right"></i></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-9">
+						<ul class="post-job-bx browse-job">
+							<li>
+								<div class="post-bx">
+									<div class="d-flex m-b30">
+										<div class="job-post-company">
+											<span><img alt="" src="{{ asset('frontend/images/logo/svg/logo1.svg') }}"/></span>
+										</div>
+										<div class="job-post-info">
+											<h4><a href="{{ url('job-detail') }}">Digital Marketing Executive</a></h4>
+											<ul>
+												<li><i class="fas fa-map-marker-alt"></i> Sacramento, California</li>
+												<li><i class="far fa-bookmark"></i> Full Time</li>
+												<li><i class="far fa-clock"></i> Published 11 months ago</li>
+											</ul>
+										</div>
+									</div>
+									<div class="d-flex">
+										<div class="job-time me-auto">
+											<a href="javascript:void(0);"><span>Full Time</span></a>
+										</div>
+										<div class="salary-bx">
+											<span>$1200 - $ 2500</span>
+										</div>
+									</div>
+									<label class="like-btn">
+										  <input type="checkbox">
+										  <span class="checkmark"></span>
+									</label>
+								</div>
+							</li>
+							<li>
+								<div class="post-bx">
+									<div class="d-flex m-b30">
+										<div class="job-post-company">
+											<span><img alt="" src="{{ asset('frontend/images/logo/svg/logo2.svg') }}"/></span>
+										</div>
+										<div class="job-post-info">
+											<h4><a href="{{ url('job-detail') }}">Principal UX Designer</a></h4>
+											<ul>
+												<li><i class="fas fa-map-marker-alt"></i> Sacramento, California</li>
+												<li><i class="far fa-bookmark"></i> Full Time</li>
+												<li><i class="far fa-clock"></i> Published 11 months ago</li>
+											</ul>
+										</div>
+									</div>
+									<div class="d-flex">
+										<div class="job-time me-auto">
+											<a href="javascript:void(0);"><span>Full Time</span></a>
+										</div>
+										<div class="salary-bx">
+											<span>$1200 - $ 2500</span>
+										</div>
+									</div>
+									<label class="like-btn">
+										  <input type="checkbox">
+										  <span class="checkmark"></span>
+									</label>
+								</div>
+							</li>
+							<li>
+								<div class="post-bx">
+									<div class="d-flex m-b30">
+										<div class="job-post-company">
+											<span><img alt="" src="{{ asset('frontend/images/logo/svg/logo3.svg') }}"/></span>
+										</div>
+										<div class="job-post-info">
+											<h4><a href="{{ url('job-detail') }}">Junior UX Designer</a></h4>
+											<ul>
+												<li><i class="fas fa-map-marker-alt"></i> Sacramento, California</li>
+												<li><i class="far fa-bookmark"></i> Full Time</li>
+												<li><i class="far fa-clock"></i> Published 11 months ago</li>
+											</ul>
+										</div>
+									</div>
+									<div class="d-flex">
+										<div class="job-time me-auto">
+											<a href="javascript:void(0);"><span>Full Time</span></a>
+										</div>
+										<div class="salary-bx">
+											<span>$1200 - $ 2500</span>
+										</div>
+									</div>
+									<label class="like-btn">
+										  <input type="checkbox">
+										  <span class="checkmark"></span>
+									</label>
+								</div>
+							</li>
+							<li>
+								<div class="post-bx">
+									<div class="d-flex m-b30">
+										<div class="job-post-company">
+											<span><img alt="" src="{{ asset('frontend/images/logo/svg/logo4.svg') }}"/></span>
+										</div>
+										<div class="job-post-info">
+											<h4><a href="{{ url('job-detail') }}">Senior UX Designer</a></h4>
+											<ul>
+												<li><i class="fas fa-map-marker-alt"></i> Sacramento, California</li>
+												<li><i class="far fa-bookmark"></i> Full Time</li>
+												<li><i class="far fa-clock"></i> Published 11 months ago</li>
+											</ul>
+										</div>
+									</div>
+									<div class="d-flex">
+										<div class="job-time me-auto">
+											<a href="javascript:void(0);"><span>Full Time</span></a>
+										</div>
+										<div class="salary-bx">
+											<span>$1200 - $ 2500</span>
+										</div>
+									</div>
+									<label class="like-btn">
+										  <input type="checkbox">
+										  <span class="checkmark"></span>
+									</label>
+								</div>
+							</li>
+							<li>
+								<div class="post-bx">
+									<div class="d-flex m-b30">
+										<div class="job-post-company">
+											<span><img alt="" src="{{ asset('frontend/images/logo/svg/logo5.svg') }}"/></span>
+										</div>
+										<div class="job-post-info">
+											<h4><a href="{{ url('job-detail') }}">Digital Marketing Executive</a></h4>
+											<ul>
+												<li><i class="fas fa-map-marker-alt"></i> Sacramento, California</li>
+												<li><i class="far fa-bookmark"></i> Full Time</li>
+												<li><i class="far fa-clock"></i> Published 11 months ago</li>
+											</ul>
+										</div>
+									</div>
+									<div class="d-flex">
+										<div class="job-time me-auto">
+											<a href="javascript:void(0);"><span>Full Time</span></a>
+										</div>
+										<div class="salary-bx">
+											<span>$1200 - $ 2500</span>
+										</div>
+									</div>
+									<label class="like-btn">
+										  <input type="checkbox">
+										  <span class="checkmark"></span>
+									</label>
+								</div>
+							</li>
+							<li>
+								<div class="post-bx">
+									<div class="d-flex m-b30">
+										<div class="job-post-company">
+											<span><img alt="" src="{{ asset('frontend/images/logo/icon1.png') }}"/></span>
+										</div>
+										<div class="job-post-info">
+											<h4><a href="{{ url('job-detail') }}">Freelance UI Designer</a></h4>
+											<ul>
+												<li><i class="fas fa-map-marker-alt"></i> Sacramento, California</li>
+												<li><i class="far fa-bookmark"></i> Full Time</li>
+												<li><i class="far fa-clock"></i> Published 11 months ago</li>
+											</ul>
+										</div>
+									</div>
+									<div class="d-flex">
+										<div class="job-time me-auto">
+											<a href="javascript:void(0);"><span>Full Time</span></a>
+										</div>
+										<div class="salary-bx">
+											<span>$1200 - $ 2500</span>
+										</div>
+									</div>
+									<label class="like-btn">
+										  <input type="checkbox">
+										  <span class="checkmark"></span>
+									</label>
+								</div>
+							</li>
+						</ul>
+						<div class="m-t30">
+							<div class="d-flex">
+								<a class="site-button button-sm me-auto" href="javascript:void(0);"><i class="ti-arrow-left"></i> Prev</a>
+								<a class="site-button button-sm" href="javascript:void(0);">Next <i class="ti-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="sticky-top">
+							<div class="candidates-are-sys m-b30">
+								<div class="candidates-bx">
+									<div class="testimonial-pic radius"><img src="{{ asset('frontend/images/testimonials/pic3.jpg') }}" alt="" width="100" height="100"></div>
+									<div class="testimonial-text">
+										<p>I just got a job that I applied for via careerfy! I used the site all the time during my job hunt.</p>
+									</div>
+									<div class="testimonial-detail"> <strong class="testimonial-name">Richard Anderson</strong> <span class="testimonial-position">Nevada, USA</span> </div>
+								</div>
+							</div>
+							<div class="quote-bx">
+								<div class="quote-info">
+									<h4>Make a Difference with Your Online Resume!</h4>
+									<p>Your resume in minutes with JobBoard resume assistant is ready!</p>
+									<a href="{{ url('register') }}" class="site-button">Create an Account</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Our Job END -->	
+		<!-- Call To Action -->
+		<div class="section-full p-tb70 overlay-black-dark text-white text-center bg-img-fix" style="background-image: url({{ asset('frontend/images/background/bg4.jpg') }});">
+			<div class="container">
+				<div class="section-head text-center text-white">
+					<h2 class="m-b5">Testimonials</h2>
+					<h5 class="fw4">Few words from candidates</h5>
+				</div>
+				<div class="blog-carousel-center owl-carousel owl-none">
+					<div class="item">
+						<div class="testimonial-5">
+							<div class="testimonial-text">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+							</div>
+							<div class="testimonial-detail clearfix">
+								<div class="testimonial-pic radius shadow">
+									<img src="{{ asset('frontend/images/testimonials/pic1.jpg') }}" width="100" height="100" alt="">
+								</div>
+								<strong class="testimonial-name">David Matin</strong> 
+								<span class="testimonial-position">Student</span> 
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimonial-5">
+							<div class="testimonial-text">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+							</div>
+							<div class="testimonial-detail clearfix">
+								<div class="testimonial-pic radius shadow">
+									<img src="{{ asset('frontend/images/testimonials/pic2.jpg') }}" width="100" height="100" alt="">
+								</div>
+								<strong class="testimonial-name">David Matin</strong> 
+								<span class="testimonial-position">Student</span> 
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimonial-5">
+							<div class="testimonial-text">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+							</div>
+							<div class="testimonial-detail clearfix">
+								<div class="testimonial-pic radius shadow">
+									<img src="{{ asset('frontend/images/testimonials/pic3.jpg') }}" width="100" height="100" alt="">
+								</div>
+								<strong class="testimonial-name">David Matin</strong> 
+								<span class="testimonial-position">Student</span> 
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Call To Action END -->
+		<!-- Our Latest Blog -->
+		<div class="section-full content-inner-2 bg-white" style="background-image:url({{ asset('frontend/images/lines.png') }}); background-position:bottom; background-repeat:no-repeat; background-size: 100%;">
+			<div class="container">
+				<div class="section-head text-black text-center">
+					<h2 class="m-b0">Membership Plans</h2>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
+				</div>
+				<!-- Pricing table-1 Columns 3 with gap -->
+				<div class="section-content box-sort-in button-example m-t80">
+					<div class="pricingtable-row">
+						<div class="row max-w1000 m-auto">
+							<div class="col-sm-12 col-md-4 col-lg-4 p-lr0">
+								<div class="pricingtable-wrapper style2">
+									<div class="pricingtable-inner">
+										<div class="pricingtable-price"> 
+											<h4 class="font-weight-300 m-t10 m-b0">Basic</h4>
+											<div class="pricingtable-bx"><span>Free</span></div>
+										</div>
+										<p>Lorem ipsum dolor sit amet adipiscing elit sed do eiusmod tempors labore et dolore magna siad enim aliqua</p>
+										<div class="m-t20"> 
+											<a href="{{ url('register') }}" class="site-button radius-xl"><span class="p-lr30">Sign Up</span></a> 
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-4 col-lg-4 p-lr0">
+								<div class="pricingtable-wrapper style2 text-white active">
+									<div class="pricingtable-inner">
+										<div class="pricingtable-price"> 
+											<h4 class="font-weight-300 m-t10 m-b0">Professional</h4>
+											<div class="pricingtable-bx"> $ <span>29</span> /  Per Installation </div>
+										</div>
+										<p>Lorem ipsum dolor sit amet adipiscing elit sed do eiusmod tempors labore et dolore magna siad enim aliqua</p>
+										<div class="m-t20"> 
+											<a href="{{ url('register') }}" class="site-button white radius-xl"><span class="text-primary p-lr30">Sign Up</span></a> 
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-4 col-lg-4 p-lr0">
+								<div class="pricingtable-wrapper style2">
+									<div class="pricingtable-inner">
+										<div class="pricingtable-price"> 
+											<h4 class="font-weight-300 m-t10 m-b0">Extended</h4>
+											<div class="pricingtable-bx"> $  <span>29</span> /  Per Installation </div>
+										</div>
+										<p>Lorem ipsum dolor sit amet adipiscing elit sed do eiusmod tempors labore et dolore magna siad enim aliqua</p>
+										<div class="m-t20"> 
+											<a href="{{ url('register') }}" class="site-button radius-xl"><span class="p-lr30">Sign Up</span></a> 
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Our Latest Blog -->
+	</div>
+	<!-- Content END-->
+	<!-- Modal Box -->
+	<div class="modal fade lead-form-modal" id="car-details" tabindex="-1" role="dialog" >
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="modal-body row m-a0 clearfix">
+					<div class="col-lg-6 col-md-6 d-flex p-a0" style="background-image: url({{ asset('frontend/images/background/bg3.jpg') }});  background-position:center; background-size:cover;">
+						
+					</div>
+					<div class="col-lg-6 col-md-6 p-a0">
+						<div class="lead-form browse-job text-left">
+							<form>
+								<h3 class="m-t0">Personal Details</h3>
+								<div class="form-group">
+									<input value="" class="form-control" placeholder="Name"/>
+								</div>	
+								<div class="form-group">
+									<input value="" class="form-control" placeholder="Mobile Number"/>
+								</div>
+								<div class="clearfix">
+									<button type="button" class="btn-primary site-button btn-block">Submit </button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<!-- Modal Box End -->
+	<!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+					<div class="col-xl-5 col-lg-4 col-md-12 col-sm-12">
+                        <div class="widget">
+							<div class="logo-white">
+								<img class="logo m-b15" src="{{ asset('frontend/images/logo-white.png') }}" width="180" alt=""/>
+							</div>
+							<p class="text-capitalize m-b20">Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since the.</p>
+                            <div class="subscribe-form m-b20">
+								<form class="dzSubscribe" action="https://job-board.dexignzone.com/xhtml/script/mailchamp.php" method="post">
+									<div class="dzSubscribeMsg"></div>
+									<div class="input-group">
+										<input name="dzEmail" required="required"  class="form-control" placeholder="Your Email Address" type="email">
+										<span class="input-group-btn">
+											<button name="submit" value="Submit" type="submit" class="site-button radius-xl">Subscribe</button>
+										</span> 
+									</div>
+								</form>
+							</div>
+							<ul class="list-inline m-a0">
+								<li><a target="_blank" href="https://www.facebook.com/" class="site-button white facebook circle "><i class="fab fa-facebook-f"></i></a></li>
+								<li><a target="_blank" href="https://www.google.com/" class="site-button white google-plus circle "><i class="fab fa-google-plus-g"></i></a></li>
+								<li><a target="_blank" href="https://www.linkedin.com/" class="site-button white linkedin circle "><i class="fab fa-linkedin-in"></i></a></li>
+								<li><a target="_blank" href="https://www.instagram.com/" class="site-button white instagram circle "><i class="fab fa-instagram"></i></a></li>
+								<li><a target="_blank" href="https://twitter.com/" class="site-button white twitter circle "><i class="fab fa-twitter"></i></a></li>
+							</ul>
+                        </div>
+                    </div>
+					<div class="col-xl-5 col-lg-5 col-md-8 col-sm-8 col-12">
+                        <div class="widget border-0">
+                            <h5 class="m-b30 text-white">Frequently Asked Questions</h5>
+                            <ul class="list-2 list-line">
+                                <li><a href="javascript:void(0);">Privacy & Seurty</a></li>
+                                <li><a href="javascript:void(0);">Terms of Serice</a></li>
+                                <li><a href="javascript:void(0);">Communications</a></li>
+                                <li><a href="javascript:void(0);">Referral Terms</a></li>
+                                <li><a href="javascript:void(0);">Lending Licnses</a></li>
+								<li><a href="javascript:void(0);">Support</a></li>
+                                <li><a href="javascript:void(0);">How It Works</a></li>
+                                <li><a href="javascript:void(0);">For Employers</a></li>
+                                <li><a href="javascript:void(0);">Underwriting</a></li>
+                                <li><a href="javascript:void(0);">Contact Us</a></li>
+								<li><a href="javascript:void(0);">Lending Licnses</a></li>
+								<li><a href="javascript:void(0);">Support</a></li>
+                            </ul>
+                        </div>
+                    </div>
+					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-12">
+                        <div class="widget border-0">
+                            <h5 class="m-b30 text-white">Find Jobs</h5>
+                            <ul class="list-2 w10 list-line">
+                                <li><a href="javascript:void(0);">US Jobs</a></li>
+                                <li><a href="javascript:void(0);">Canada Jobs</a></li>
+                                <li><a href="javascript:void(0);">UK Jobs</a></li>
+                                <li><a href="javascript:void(0);">Emplois en Fnce</a></li>
+                                <li><a href="javascript:void(0);">Jobs in Deuts</a></li>
+								<li><a href="javascript:void(0);">Vacatures China</a></li>
+                            </ul>
+                        </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+        <!-- footer bottom part -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+						<span> © Copyright  2023 by <i class="fa fa-heart m-lr5 text-red heart"></i>
+						<a href="https://dexignzone.com/" target="_blank">DexignZone </a> All rights reserved.</span> 
+					</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer END -->
+    <!-- scroll top button -->
+    <button class="scroltop fa fa-arrow-up" ></button>
+</div>
+<!-- JAVASCRIPT FILES ========================================= -->
+<script src="{{ asset('frontend/js/jquery.min.js') }}"></script><!-- JQUERY.MIN JS -->
+<script src="{{ asset('frontend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script><!-- BOOTSTRAP.MIN JS -->
+<script src="{{ asset('frontend/plugins/bootstrap-select/bootstrap-select.min.js') }}"></script><!-- FORM JS -->
+<script src="{{ asset('frontend/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js') }}"></script><!-- FORM JS -->
+<script src="{{ asset('frontend/plugins/magnific-popup/magnific-popup.js') }}"></script><!-- MAGNIFIC POPUP JS -->
+<script src="{{ asset('frontend/plugins/counter/waypoints-min.js') }}"></script><!-- WAYPOINTS JS -->
+<script src="{{ asset('frontend/plugins/counter/counterup.min.js') }}"></script><!-- COUNTERUP JS -->
+<script src="{{ asset('frontend/plugins/imagesloaded/imagesloaded.js') }}"></script><!-- IMAGESLOADED -->
+<script src="{{ asset('frontend/plugins/masonry/masonry-3.1.4.js') }}"></script><!-- MASONRY -->
+<script src="{{ asset('frontend/plugins/masonry/masonry.filter.js') }}"></script><!-- MASONRY -->
+<script src="{{ asset('frontend/plugins/owl-carousel/owl.carousel.js') }}"></script><!-- OWL SLIDER -->
+<script src="{{ asset('frontend/plugins/scroll/scrollbar.min.js') }}"></script><!-- OWL SLIDER -->
+<script src="{{ asset('frontend/js/custom.js') }}"></script><!-- CUSTOM FUCTIONS  -->
+<script src="{{ asset('frontend/js/dz.carousel.js') }}"></script><!-- SORTCODE FUCTIONS  -->
+<script src="{{ asset('frontend/js/dz.ajax.js') }}"></script><!-- CONTACT JS  -->
+<script src="{{ asset('frontend/plugins/switcher/switcher.js') }}"></script><!-- SWITCHER -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"0931814f84b94398b852d3ac91b5f293","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+

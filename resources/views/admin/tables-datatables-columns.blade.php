@@ -1,0 +1,4085 @@
+<!doctype html>
+<html lang="en">
+    
+<!-- Mirrored from coderthemes.com/paces/bootstrap/tables-datatables-columns.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Jun 2026 10:00:02 GMT -->
+<head>
+        <meta charset="utf-8" />
+        <title>Show & Hide Columns Datatables | Paces - Multipurpose Tailwind CSS & Bootstrap Admin Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Paces is a modern, responsive admin dashboard available on ThemeForest. Ideal for building CRM, CMS, project management tools, and custom web applications with a clean UI, flexible layouts, and rich features." />
+        <meta name="keywords" content="Paces, admin dashboard, ThemeForest, Bootstrap 5 admin, responsive admin, CRM dashboard, CMS admin, web app UI, admin theme, premium admin template" />
+        <meta name="author" content="Coderthemes" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{{ asset('admin/assets/images/favicon.ico') }}" />
+
+
+        <!-- Datatables css -->
+        <link href="{{ asset('admin/assets/plugins/datatables/responsive.bootstrap5.min.css') }}" rel="stylesheet" type="text/css" />
+
+        <!-- Theme Config Js -->
+        <script src="{{ asset('admin/assets/js/config.js') }}"></script>
+        <script src="{{ asset('admin/demo.js') }}"></script>
+
+        <!-- Vendor css -->
+        <link href="{{ asset('admin/assets/css/vendors.min.css') }}" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link id="app-style" href="{{ asset('admin/assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            <header class="app-topbar">
+                <div class="container-fluid topbar-menu">
+                    <div class="d-flex align-items-center gap-2">
+                        <!-- Topbar Brand Logo -->
+                        <div class="logo-topbar">
+                            <!-- Logo light -->
+                            <a href="{{ url('admin') }}" class="logo-light">
+                                <span class="logo-lg">
+                                    <img src="{{ asset('admin/assets/images/logo.png') }}" alt="logo" />
+                                </span>
+                                <span class="logo-sm">
+                                    <img src="{{ asset('admin/assets/images/logo-sm.png') }}" alt="small logo" />
+                                </span>
+                            </a>
+
+                            <!-- Logo Dark -->
+                            <a href="{{ url('admin') }}" class="logo-dark">
+                                <span class="logo-lg">
+                                    <img src="{{ asset('admin/assets/images/logo-black.png') }}" alt="dark logo" />
+                                </span>
+                                <span class="logo-sm">
+                                    <img src="{{ asset('admin/assets/images/logo-sm.png') }}" alt="small logo" />
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- Sidebar Menu Toggle Button -->
+                        <button class="sidenav-toggle-button btn btn-primary btn-icon">
+                            <i class="ti ti-menu-4"></i>
+                        </button>
+
+                        <!-- Horizontal Menu Toggle Button -->
+                        <button class="topnav-toggle-button px-2" data-bs-toggle="collapse" data-bs-target="#topnav-menu">
+                            <i class="ti ti-menu-4"></i>
+                        </button>
+
+                        <div id="search-box-rounded" class="app-search d-none d-xl-flex">
+                            <input type="search" class="form-control rounded-pill topbar-search" name="search" placeholder="Quick Search..." />
+                            <i class="ti ti-search app-search-icon text-muted"></i>
+                        </div>
+
+                        <div id="megamenu-columns" class="topbar-item d-none d-md-flex">
+                            <div class="dropdown">
+                                <button class="topbar-link btn fw-medium btn-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
+                                    Mega Menu
+                                    <i class="ti ti-chevron-down ms-1"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-xxl p-0">
+                                    <div class="h-100" style="max-height: 380px" data-simplebar="">
+                                        <div class="row g-0">
+                                            <!-- Dashboard & Analytics -->
+                                            <div class="col-md-4">
+                                                <div class="p-2">
+                                                    <h5 class="mb-1 fw-semibold fs-sm dropdown-header">Dashboard &amp; Analytics</h5>
+                                                    <ul class="list-unstyled megamenu-list">
+                                                        <li>
+                                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                                <i class="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                Sales Dashboard
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                                <i class="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                Marketing Dashboard
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                                <i class="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                Finance Overview
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                                <i class="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                User Analytics
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                                <i class="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                Traffic Insights
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <!-- Project Management -->
+                                            <div class="col-md-4">
+                                                <div class="p-2">
+                                                    <h5 class="mb-1 fw-semibold fs-sm dropdown-header">Project Management</h5>
+                                                    <ul class="list-unstyled megamenu-list">
+                                                        <li>
+                                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                                <i class="ti ti-minus align-middle me-1 text-muted"></i>
+                                                                Kanban Workflow
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                                <i class="ti ti-minus align-middle me-1 text-muted"></i>
+                                                                Project Timeline
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                                <i class="ti ti-minus align-middle me-1 text-muted"></i>
+                                                                Task Management
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                                <i class="ti ti-minus align-middle me-1 text-muted"></i>
+                                                                Team Members
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                                <i class="ti ti-minus align-middle me-1 text-muted"></i>
+                                                                Assignments
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <!-- User Management -->
+                                            <div class="col-md-4">
+                                                <div class="p-2 bg-light bg-opacity-50">
+                                                    <h5 class="mb-1 fw-semibold fs-sm dropdown-header">User Management</h5>
+                                                    <ul class="list-unstyled megamenu-list">
+                                                        <li>
+                                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                                <i class="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                User Profiles
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                                <i class="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                Access Control
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                                <i class="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                Security Settings
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                                <i class="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                User Groups
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" class="dropdown-item">
+                                                                <i class="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                Authentication
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end .h-100-->
+                                </div>
+                                <!-- .dropdown-menu-->
+                            </div>
+                            <!-- .dropdown-->
+                        </div>
+
+                        <div id="megamenu-apps" class="topbar-item d-none d-md-flex">
+                            <div class="dropdown">
+                                <button class="topbar-link btn fw-medium btn-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
+                                    Apps
+                                    <i class="ti ti-chevron-down ms-1"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-xxl p-0">
+                                    <div class="h-100" style="max-height: 380px" data-simplebar="">
+                                        <div class="row g-0">
+                                            <div class="col-sm-8">
+                                                <div class="row g-0">
+                                                    <div class="col-sm-6">
+                                                        <div class="p-2">
+                                                            <a href="#!" class="dropdown-item">
+                                                                <span class="d-flex align-items-center">
+                                                                    <span class="avatar-md me-2">
+                                                                        <span class="avatar-title text-primary border border-light bg-light bg-opacity-50 rounded">
+                                                                            <i class="ti ti-basket fs-22"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <h5 class="fs-base mb-0 lh-base">eCommerce</h5>
+                                                                        <span class="text-muted fs-12">Products, orders &amp; etc.</span>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+
+                                                            <a href="#!" class="dropdown-item my-2">
+                                                                <span class="d-flex align-items-center">
+                                                                    <span class="avatar-md me-2">
+                                                                        <span class="avatar-title text-success border border-light bg-light bg-opacity-50 rounded">
+                                                                            <i class="ti ti-message fs-22"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <h5 class="fs-base mb-0 lh-base">Chat</h5>
+                                                                        <span class="text-muted fs-12">Team conversations</span>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+
+                                                            <a href="#!" class="dropdown-item my-2">
+                                                                <span class="d-flex align-items-center">
+                                                                    <span class="avatar-md me-2">
+                                                                        <span class="avatar-title text-danger border border-light bg-light bg-opacity-50 rounded">
+                                                                            <i class="ti ti-list-check fs-22"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <h5 class="fs-base mb-0 lh-base">Task</h5>
+                                                                        <span class="text-muted fs-12">Plan and track work</span>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+
+                                                            <a href="#!" class="dropdown-item mt-2">
+                                                                <span class="d-flex align-items-center">
+                                                                    <span class="avatar-md me-2">
+                                                                        <span class="avatar-title text-info border border-light bg-light bg-opacity-50 rounded">
+                                                                            <i class="ti ti-mailbox fs-22"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <h5 class="fs-base mb-0 lh-base">Email</h5>
+                                                                        <span class="text-muted fs-12">Messages and inbox</span>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-6">
+                                                        <div class="p-2">
+                                                            <a href="#!" class="dropdown-item">
+                                                                <span class="d-flex align-items-center">
+                                                                    <span class="avatar-md me-2">
+                                                                        <span class="avatar-title text-secondary border border-light bg-light bg-opacity-50 rounded">
+                                                                            <i class="ti ti-building fs-22"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <h5 class="fs-base mb-0 lh-base">Companies</h5>
+                                                                        <span class="text-muted fs-12">Business profiles</span>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+
+                                                            <a href="#!" class="dropdown-item my-2">
+                                                                <span class="d-flex align-items-center">
+                                                                    <span class="avatar-md me-2">
+                                                                        <span class="avatar-title text-dark border border-light bg-light bg-opacity-50 rounded">
+                                                                            <i class="ti ti-id fs-22"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <h5 class="fs-base mb-0 lh-base">Contacts Diary</h5>
+                                                                        <span class="text-muted fs-12">People and connections</span>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+
+                                                            <a href="#!" class="dropdown-item my-2">
+                                                                <span class="d-flex align-items-center">
+                                                                    <span class="avatar-md me-2">
+                                                                        <span class="avatar-title text-warning border border-light bg-light bg-opacity-50 rounded">
+                                                                            <i class="ti ti-calendar fs-22"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <h5 class="fs-base mb-0 lh-base">Calendar</h5>
+                                                                        <span class="text-muted fs-12">Events and reminders</span>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+
+                                                            <a href="#!" class="dropdown-item mt-2">
+                                                                <span class="d-flex align-items-center">
+                                                                    <span class="avatar-md me-2">
+                                                                        <span class="avatar-title text-success border border-light bg-light bg-opacity-50 rounded">
+                                                                            <i class="ti ti-lifebuoy fs-22"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <h5 class="fs-base mb-0 lh-base">Support</h5>
+                                                                        <span class="text-muted fs-12">Help and assistance</span>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end row-->
+
+                                                <div class="row g-0 border-top border-light border-dashed text-center">
+                                                    <div class="col">
+                                                        <div class="p-3">
+                                                            <p class="fw-medium text-muted mb-2 fs-11 text-uppercase lh-1">-: &nbsp; Support &nbsp;:-</p>
+                                                            <h5 class="fs-15 mb-0">help@mydomain.com</h5>
+                                                        </div>
+                                                    </div>
+                                                    <!-- end col-->
+                                                    <div class="col">
+                                                        <div class="p-3">
+                                                            <p class="fw-medium text-muted mb-2 fs-11 text-uppercase lh-1">-: &nbsp; Help: &nbsp;:-</p>
+                                                            <h5 class="fs-15 mb-0">+(12) 3456 7890</h5>
+                                                        </div>
+                                                    </div>
+                                                    <!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                            <!-- end col-->
+
+                                            <div class="col-sm-4">
+                                                <div class="h-100 position-relative rounded-end rounded-0 overflow-hidden" style="background: url({{ asset('admin/assets/images/stock/small-8.jpg') }}); background-size: cover">
+                                                    <div class="p-3 card-img-overlay bg-gradient bg-secondary bg-opacity-90 d-flex align-items-center justify-content-center">
+                                                        <div class="text-center text-white">
+                                                            <i class="ti ti-atom fs-36"></i>
+
+                                                            <p class="text-white text-opacity-75 mb-3 text-uppercase">Limited Offer</p>
+
+                                                            <h3 class="fw-semibold text-white mb-2 fs-20">Unlock Exclusive Savings</h3>
+
+                                                            <h4 class="fw-medium fs-16 mb-1">
+                                                                <del class="text-white text-opacity-75">$49.00</del>
+                                                                /
+                                                                <span class="fw-bold text-white">$25 USD</span>
+                                                            </h4>
+
+                                                            <button type="button" class="btn btn-danger btn-sm mt-3">
+                                                                <i class="ti ti-shopping-cart me-1"></i>
+                                                                Grab Deal
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end .bg-light-->
+                                            </div>
+                                            <!-- end col-->
+                                        </div>
+                                        <!-- end row-->
+                                    </div>
+                                    <!-- end .h-100-->
+                                </div>
+                                <!-- .dropdown-menu-->
+                            </div>
+                            <!-- .dropdown-->
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-2">
+                        <div id="theme-dropdown" class="topbar-item d-none d-sm-flex">
+                            <div class="dropdown">
+                                <button class="topbar-link" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
+                                    <i class="ti ti-sun topbar-link-icon d-none" id="theme-icon-light"></i>
+                                    <i class="ti ti-moon topbar-link-icon d-none" id="theme-icon-dark"></i>
+                                    <i class="ti ti-sun-moon topbar-link-icon d-none" id="theme-icon-system"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end" data-thememode="dropdown">
+                                    <label class="dropdown-item cursor-pointer">
+                                        <input class="form-check-input" type="radio" name="data-bs-theme" value="light" style="display: none" />
+                                        <i class="ti ti-sun align-middle me-1 fs-16"></i>
+                                        <span class="align-middle">Light</span>
+                                    </label>
+                                    <label class="dropdown-item cursor-pointer">
+                                        <input class="form-check-input" type="radio" name="data-bs-theme" value="dark" style="display: none" />
+                                        <i class="ti ti-moon align-middle me-1 fs-16"></i>
+                                        <span class="align-middle">Dark</span>
+                                    </label>
+                                    <label class="dropdown-item cursor-pointer">
+                                        <input class="form-check-input" type="radio" name="data-bs-theme" value="system" style="display: none" />
+                                        <i class="ti ti-sun-moon align-middle me-1 fs-16"></i>
+                                        <span class="align-middle">System</span>
+                                    </label>
+                                </div>
+                                <!-- end dropdown-menu-->
+                            </div>
+                            <!-- end dropdown-->
+                        </div>
+
+                        <div id="apps-dropdown-grid" class="topbar-item d-none d-xl-flex">
+                            <div class="dropdown">
+                                <button class="topbar-link dropdown-toggle drop-arrow-none" data-bs-toggle="dropdown" type="button" data-bs-auto-close="outside" aria-haspopup="false" aria-expanded="false">
+                                    <i class="ti ti-apps topbar-link-icon"></i>
+                                </button>
+
+                                <div class="dropdown-menu dropdown-menu-lg p-2 dropdown-menu-end">
+                                    <div class="row align-items-center g-1">
+                                        <div class="col-4">
+                                            <a href="javascript:void(0);" class="dropdown-item border border-dashed rounded text-center py-2">
+                                                <span class="avatar-sm d-block mx-auto mb-1">
+                                                    <span class="avatar-title text-bg-light rounded-circle">
+                                                        <img src="{{ asset('admin/assets/images/logos/google.svg') }}" alt="Google Logo" height="18" />
+                                                    </span>
+                                                </span>
+                                                <span class="align-middle fw-medium">Google</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-4">
+                                            <a href="javascript:void(0);" class="dropdown-item border border-dashed rounded text-center py-2">
+                                                <span class="avatar-sm d-block mx-auto mb-1">
+                                                    <span class="avatar-title text-bg-light rounded-circle">
+                                                        <img src="{{ asset('admin/assets/images/logos/figma.svg') }}" alt="Figma Logo" height="18" />
+                                                    </span>
+                                                </span>
+                                                <span class="align-middle fw-medium">Figma</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-4">
+                                            <a href="javascript:void(0);" class="dropdown-item border border-dashed rounded text-center py-2">
+                                                <span class="avatar-sm d-block mx-auto mb-1">
+                                                    <span class="avatar-title text-bg-light rounded-circle">
+                                                        <img src="{{ asset('admin/assets/images/logos/slack.svg') }}" alt="Slack Logo" height="18" />
+                                                    </span>
+                                                </span>
+                                                <span class="align-middle fw-medium">Slack</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-4">
+                                            <a href="javascript:void(0);" class="dropdown-item border border-dashed rounded text-center py-2">
+                                                <span class="avatar-sm d-block mx-auto mb-1">
+                                                    <span class="avatar-title text-bg-light rounded-circle">
+                                                        <img src="{{ asset('admin/assets/images/logos/dropbox.svg') }}" alt="Dropbox Logo" height="18" />
+                                                    </span>
+                                                </span>
+                                                <span class="align-middle fw-medium">Dropbox</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-4 text-center">
+                                            <a href="javascript:void(0);" class="btn btn-sm rounded-circle btn-icon btn-danger">
+                                                <i class="ti ti-circle-dashed-plus fs-18"></i>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-4">
+                                            <a href="javascript:void(0);" class="dropdown-item border border-dashed rounded text-center py-2">
+                                                <span class="avatar-sm d-block mx-auto mb-1">
+                                                    <span class="avatar-title bg-primary-subtle text-primary rounded-circle">
+                                                        <i class="ti ti-calendar fs-18"></i>
+                                                    </span>
+                                                </span>
+                                                <span class="align-middle fw-medium">Calendar</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-4">
+                                            <a href="javascript:void(0);" class="dropdown-item border border-dashed rounded text-center py-2">
+                                                <span class="avatar-sm d-block mx-auto mb-1">
+                                                    <span class="avatar-title bg-primary-subtle text-primary rounded-circle">
+                                                        <i class="ti ti-message-circle fs-18"></i>
+                                                    </span>
+                                                </span>
+                                                <span class="align-middle fw-medium">Chat</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-4">
+                                            <a href="javascript:void(0);" class="dropdown-item border border-dashed rounded text-center py-2">
+                                                <span class="avatar-sm d-block mx-auto mb-1">
+                                                    <span class="avatar-title bg-primary-subtle text-primary rounded-circle">
+                                                        <i class="ti ti-folder fs-18"></i>
+                                                    </span>
+                                                </span>
+                                                <span class="align-middle fw-medium">Files</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-4">
+                                            <a href="javascript:void(0);" class="dropdown-item border border-dashed rounded text-center py-2">
+                                                <span class="avatar-sm d-block mx-auto mb-1">
+                                                    <span class="avatar-title bg-primary-subtle text-primary rounded-circle">
+                                                        <i class="ti ti-users fs-18"></i>
+                                                    </span>
+                                                </span>
+                                                <span class="align-middle fw-medium">Team</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End dropdown-menu -->
+                            </div>
+                            <!-- end dropdown-->
+                        </div>
+
+                        <div id="notification-dropdown-people" class="topbar-item">
+                            <div class="dropdown">
+                                <button class="topbar-link dropdown-toggle drop-arrow-none" data-bs-toggle="dropdown" type="button" data-bs-auto-close="outside" aria-haspopup="false" aria-expanded="false">
+                                    <i class="ti ti-bell topbar-link-icon animate-ring"></i>
+                                    <span class="badge text-bg-danger badge-circle topbar-badge">5</span>
+                                </button>
+
+                                <div class="dropdown-menu p-0 dropdown-menu-end dropdown-menu-lg">
+                                    <div class="px-3 py-2 border-bottom">
+                                        <div class="row align-items-center">
+                                            <div class="col">
+                                                <h6 class="m-0 fs-md fw-semibold">Notifications</h6>
+                                            </div>
+                                            <div class="col text-end">
+                                                <a href="#!" class="badge badge-soft-success badge-label py-1">07 Notifications</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div style="max-height: 300px" data-simplebar="">
+                                        <!-- Notification 1 -->
+                                        <div class="dropdown-item notification-item py-2 text-wrap" id="message-1">
+                                            <span class="d-flex align-items-center gap-3">
+                                                <span class="flex-shrink-0 position-relative">
+                                                    <img src="{{ asset('admin/assets/images/users/user-4.jpg') }}" class="avatar-md rounded-circle" alt="User Avatar" />
+                                                    <span class="position-absolute rounded-pill bg-success notification-badge">
+                                                        <i class="ti ti-bell align-middle"></i>
+                                                        <span class="visually-hidden">unread notification</span>
+                                                    </span>
+                                                </span>
+                                                <span class="flex-grow-1 text-muted">
+                                                    <span class="fw-medium text-body">Emily Johnson</span>
+                                                    commented on a task in
+                                                    <span class="fw-medium text-body">Design Sprint</span>
+                                                    <br />
+                                                    <span class="fs-xs">12 minutes ago</span>
+                                                </span>
+                                                <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-1">
+                                                    <i class="ti ti-square-rounded-x fs-xxl"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+
+                                        <!-- Notification 2 -->
+                                        <div class="dropdown-item notification-item py-2 text-wrap" id="message-2">
+                                            <span class="d-flex align-items-center gap-3">
+                                                <span class="flex-shrink-0 position-relative">
+                                                    <img src="{{ asset('admin/assets/images/users/user-5.jpg') }}" class="avatar-md rounded-circle" alt="User Avatar" />
+                                                    <span class="position-absolute rounded-pill bg-info notification-badge">
+                                                        <i class="ti ti-cloud-upload align-middle"></i>
+                                                        <span class="visually-hidden">upload notification</span>
+                                                    </span>
+                                                </span>
+                                                <span class="flex-grow-1 text-muted">
+                                                    <span class="fw-medium text-body">Michael Lee</span>
+                                                    uploaded files to
+                                                    <span class="fw-medium text-body">Marketing Assets</span>
+                                                    <br />
+                                                    <span class="fs-xs">25 minutes ago</span>
+                                                </span>
+                                                <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-2">
+                                                    <i class="ti ti-square-rounded-x fs-xxl"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+
+                                        <!-- Notification 3 - Server CPU Alert -->
+                                        <div class="dropdown-item notification-item py-2 text-wrap" id="message-6">
+                                            <span class="d-flex align-items-center gap-3">
+                                                <span class="flex-shrink-0 position-relative">
+                                                    <span class="avatar-md rounded-circle bg-light d-flex align-items-center justify-content-center">
+                                                        <i class="ti ti-database fs-4"></i>
+                                                    </span>
+                                                    <span class="position-absolute rounded-pill bg-danger notification-badge">
+                                                        <i class="ti ti-alert-circle align-middle"></i>
+                                                        <span class="visually-hidden">server alert</span>
+                                                    </span>
+                                                </span>
+                                                <span class="flex-grow-1 text-muted">
+                                                    <span class="fw-medium text-body">Server #3</span>
+                                                    CPU usage exceeded 90%
+                                                    <br />
+                                                    <span class="fs-xs">Just now</span>
+                                                </span>
+                                                <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-6">
+                                                    <i class="ti ti-square-rounded-x fs-xxl"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+
+                                        <!-- Notification 4 -->
+                                        <div class="dropdown-item notification-item py-2 text-wrap" id="message-3">
+                                            <span class="d-flex align-items-center gap-3">
+                                                <span class="flex-shrink-0 position-relative">
+                                                    <img src="{{ asset('admin/assets/images/users/user-6.jpg') }}" class="avatar-md rounded-circle" alt="User Avatar" />
+                                                    <span class="position-absolute rounded-pill bg-warning notification-badge">
+                                                        <i class="ti ti-alert-triangle align-middle"></i>
+                                                        <span class="visually-hidden">alert</span>
+                                                    </span>
+                                                </span>
+                                                <span class="flex-grow-1 text-muted">
+                                                    <span class="fw-medium text-body">Sophia Ray</span>
+                                                    flagged an issue in
+                                                    <span class="fw-medium text-body">Bug Tracker</span>
+                                                    <br />
+                                                    <span class="fs-xs">40 minutes ago</span>
+                                                </span>
+                                                <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-3">
+                                                    <i class="ti ti-square-rounded-x fs-xxl"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+
+                                        <!-- Notification 5 -->
+                                        <div class="dropdown-item notification-item py-2 text-wrap" id="message-4">
+                                            <span class="d-flex align-items-center gap-3">
+                                                <span class="flex-shrink-0 position-relative">
+                                                    <img src="{{ asset('admin/assets/images/users/user-7.jpg') }}" class="avatar-md rounded-circle" alt="User Avatar" />
+                                                    <span class="position-absolute rounded-pill bg-primary notification-badge">
+                                                        <i class="ti ti-calendar-event align-middle"></i>
+                                                        <span class="visually-hidden">event notification</span>
+                                                    </span>
+                                                </span>
+                                                <span class="flex-grow-1 text-muted">
+                                                    <span class="fw-medium text-body">David Kim</span>
+                                                    scheduled a meeting for
+                                                    <span class="fw-medium text-body">UX Review</span>
+                                                    <br />
+                                                    <span class="fs-xs">1 hour ago</span>
+                                                </span>
+                                                <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-4">
+                                                    <i class="ti ti-square-rounded-x fs-xxl"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+
+                                        <!-- Notification 6 -->
+                                        <div class="dropdown-item notification-item py-2 text-wrap" id="message-5">
+                                            <span class="d-flex align-items-center gap-3">
+                                                <span class="flex-shrink-0 position-relative">
+                                                    <img src="{{ asset('admin/assets/images/users/user-8.jpg') }}" class="avatar-md rounded-circle" alt="User Avatar" />
+                                                    <span class="position-absolute rounded-pill bg-secondary notification-badge">
+                                                        <i class="ti ti-edit align-middle"></i>
+                                                        <span class="visually-hidden">edit</span>
+                                                    </span>
+                                                </span>
+                                                <span class="flex-grow-1 text-muted">
+                                                    <span class="fw-medium text-body">Isabella White</span>
+                                                    updated the document in
+                                                    <span class="fw-medium text-body">Product Specs</span>
+                                                    <br />
+                                                    <span class="fs-xs">2 hours ago</span>
+                                                </span>
+                                                <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-5">
+                                                    <i class="ti ti-square-rounded-x fs-xxl"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+
+                                        <!-- Notification 7 - Deployment Success -->
+                                        <div class="dropdown-item notification-item py-2 text-wrap" id="message-7">
+                                            <span class="d-flex align-items-center gap-3">
+                                                <span class="flex-shrink-0 position-relative">
+                                                    <span class="avatar-md rounded-circle bg-light d-flex align-items-center justify-content-center">
+                                                        <i class="ti ti-rocket fs-4"></i>
+                                                    </span>
+                                                    <span class="position-absolute rounded-pill bg-success notification-badge">
+                                                        <i class="ti ti-check align-middle"></i>
+                                                        <span class="visually-hidden">deployment</span>
+                                                    </span>
+                                                </span>
+                                                <span class="flex-grow-1 text-muted">
+                                                    <span class="fw-medium text-body">Production Server</span>
+                                                    deployment completed successfully
+                                                    <br />
+                                                    <span class="fs-xs">30 minutes ago</span>
+                                                </span>
+                                                <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-7">
+                                                    <i class="ti ti-square-rounded-x fs-xxl"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <!-- All-->
+                                    <a href="javascript:void(0);" class="dropdown-item text-center text-reset text-decoration-underline link-offset-2 fw-bold notify-item border-top border-light py-2">Read All Messages</a>
+                                </div>
+                                <!-- End dropdown-menu -->
+                            </div>
+                            <!-- end dropdown-->
+                        </div>
+
+                        <div id="fullscreen-toggler" class="topbar-item d-none d-md-flex">
+                            <button class="topbar-link" type="button" data-toggle="fullscreen">
+                                <i class="ti ti-maximize topbar-link-icon"></i>
+                                <i class="ti ti-minimize topbar-link-icon d-none"></i>
+                            </button>
+                        </div>
+
+                        <div id="monochrome-toggler" class="topbar-item d-none d-xl-flex">
+                            <button id="monochrome-mode" class="topbar-link" type="button" data-toggle="monochrome">
+                                <i class="ti ti-palette topbar-link-icon"></i>
+                            </button>
+                        </div>
+
+                        <div class="topbar-item d-none d-sm-flex">
+                            <button class="topbar-link btn-theme-setting" data-bs-toggle="offcanvas" data-bs-target="#theme-settings-offcanvas" type="button">
+                                <i class="ti ti-settings topbar-link-icon"></i>
+                            </button>
+                        </div>
+
+                        <div id="language-selector-rounded" class="topbar-item">
+                            <div class="dropdown">
+                                <button class="topbar-link fw-bold" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
+                                    <img src="{{ asset('admin/assets/images/flags/us.svg') }}" alt="user-image" class="rounded-circle me-2" height="18" id="selected-language-image" />
+                                    <span id="selected-language-code">EN</span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="en" title="English">
+                                        <img src="{{ asset('admin/assets/images/flags/us.svg') }}" alt="English" class="me-1 rounded-circle" height="18" data-translator-image="" />
+                                        <span class="align-middle">English</span>
+                                    </a>
+                                    <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="de" title="German">
+                                        <img src="{{ asset('admin/assets/images/flags/de.svg') }}" alt="German" class="me-1 rounded-circle" height="18" data-translator-image="" />
+                                        <span class="align-middle">Deutsch</span>
+                                    </a>
+                                    <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="it" title="Italian">
+                                        <img src="{{ asset('admin/assets/images/flags/it.svg') }}" alt="Italian" class="me-1 rounded-circle" height="18" data-translator-image="" />
+                                        <span class="align-middle">Italiano</span>
+                                    </a>
+                                    <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="es" title="Spanish">
+                                        <img src="{{ asset('admin/assets/images/flags/es.svg') }}" alt="Spanish" class="me-1 rounded-circle" height="18" data-translator-image="" />
+                                        <span class="align-middle">Español</span>
+                                    </a>
+                                    <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="ru" title="Russian">
+                                        <img src="{{ asset('admin/assets/images/flags/ru.svg') }}" alt="Russian" class="me-1 rounded-circle" height="18" data-translator-image="" />
+                                        <span class="align-middle">Русский</span>
+                                    </a>
+                                    <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="hi" title="Hindi">
+                                        <img src="{{ asset('admin/assets/images/flags/in.svg') }}" alt="Hindi" class="me-1 rounded-circle" height="18" data-translator-image="" />
+                                        <span class="align-middle">हिन्दी</span>
+                                    </a>
+                                    <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="ar" title="Arabic">
+                                        <img src="{{ asset('admin/assets/images/flags/sa.svg') }}" alt="Arabic" class="me-1 rounded-circle" height="18" data-translator-image="" />
+                                        <span class="align-middle">عربي</span>
+                                    </a>
+                                </div>
+                                <!-- end dropdown-menu-->
+                            </div>
+                            <!-- end dropdown-->
+                        </div>
+
+                        <div id="user-dropdown-detailed" class="topbar-item nav-user">
+                            <div class="dropdown">
+                                <a class="topbar-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" href="#!" aria-haspopup="false" aria-expanded="false">
+                                    <img src="{{ asset('admin/assets/images/users/user-1.jpg') }}" width="32" class="rounded-circle me-lg-2 d-flex" alt="user-image" />
+                                    <div class="d-lg-flex align-items-center gap-1 d-none">
+                                        <span>
+                                            <h5 class="my-0 lh-1 pro-username">David Dev</h5>
+                                            <span class="fs-xs lh-1">Admin Head</span>
+                                        </span>
+                                        <i class="ti ti-chevron-down align-middle"></i>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <!-- Header -->
+                                    <div class="dropdown-header noti-title">
+                                        <h6 class="text-overflow m-0">Welcome back 👋!</h6>
+                                    </div>
+
+                                    <!-- My Profile -->
+                                    <a href="#!" class="dropdown-item">
+                                        <i class="ti ti-user-circle me-1 fs-lg align-middle"></i>
+                                        <span class="align-middle">Profile</span>
+                                    </a>
+
+                                    <!-- Notifications -->
+                                    <a href="javascript:void(0);" class="dropdown-item">
+                                        <i class="ti ti-bell-ringing me-1 fs-lg align-middle"></i>
+                                        <span class="align-middle">Notifications</span>
+                                    </a>
+
+                                    <!-- Settings -->
+                                    <a href="javascript:void(0);" class="dropdown-item">
+                                        <i class="ti ti-settings-2 me-1 fs-lg align-middle"></i>
+                                        <span class="align-middle">Account Settings</span>
+                                    </a>
+
+                                    <!-- Support -->
+                                    <a href="javascript:void(0);" class="dropdown-item">
+                                        <i class="ti ti-headset me-1 fs-lg align-middle"></i>
+                                        <span class="align-middle">Support Center</span>
+                                    </a>
+
+                                    <!-- Divider -->
+                                    <div class="dropdown-divider"></div>
+
+                                    <!-- Lock -->
+                                    <a href="{{ url('admin/auth-lock-screen') }}" class="dropdown-item">
+                                        <i class="ti ti-lock me-1 fs-lg align-middle"></i>
+                                        <span class="align-middle">Lock Screen</span>
+                                    </a>
+
+                                    <!-- Logout -->
+                                    <a href="javascript:void(0);" class="dropdown-item fw-semibold">
+                                        <i class="ti ti-logout me-1 fs-lg align-middle"></i>
+                                        <span class="align-middle">Log Out</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- Topbar End -->
+ <div class="sidenav-menu">
+    <!-- Brand Logo -->
+    <a href="{{ url('admin') }}" class="logo">
+        <span class="logo logo-light">
+            <span class="logo-lg"><img src="{{ asset('admin/assets/images/logo.png') }}" alt="logo" /></span>
+            <span class="logo-sm"><img src="{{ asset('admin/assets/images/logo-sm.png') }}" alt="small logo" /></span>
+        </span>
+
+        <span class="logo logo-dark">
+            <span class="logo-lg"><img src="{{ asset('admin/assets/images/logo-black.png') }}" alt="dark logo" /></span>
+            <span class="logo-sm"><img src="{{ asset('admin/assets/images/logo-sm.png') }}" alt="small logo" /></span>
+        </span>
+    </a>
+
+    <!-- Sidebar Hover Menu Toggle Button -->
+    <button class="button-on-hover">
+        <span class="btn-on-hover-icon"></span>
+    </button>
+
+    <!-- Full Sidebar Menu Close Button -->
+    <button class="button-close-offcanvas">
+        <i class="ti ti-menu-4 align-middle"></i>
+    </button>
+
+    <div class="scrollbar" data-simplebar="">
+        <div id="user-profile-settings" class="sidenav-user" style="background: url({{ asset('admin/assets/images/user-bg-pattern.svg') }})">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <a href="#!" class="link-reset">
+                        <img src="{{ asset('admin/assets/images/users/user-1.jpg') }}" alt="user-image" class="rounded-circle mb-2 avatar-md" />
+                        <span class="sidenav-user-name fw-bold">David Dev</span>
+                        <span class="fs-12 fw-semibold" data-lang="user-role">Art Director</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="dropdown-toggle drop-arrow-none link-reset sidenav-user-set-icon" data-bs-toggle="dropdown" data-bs-offset="0,12" href="#!" aria-haspopup="false" aria-expanded="false">
+                        <i class="ti ti-settings fs-24 align-middle ms-1"></i>
+                    </a>
+
+                    <div class="dropdown-menu">
+                        <!-- Header -->
+                        <div class="dropdown-header noti-title">
+                            <h6 class="text-overflow m-0">Welcome back!</h6>
+                        </div>
+
+                        <!-- My Profile -->
+                        <a href="#!" class="dropdown-item">
+                            <i class="ti ti-user-circle me-1 fs-lg align-middle"></i>
+                            <span class="align-middle">Profile</span>
+                        </a>
+
+                        <!-- Settings -->
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <i class="ti ti-settings-2 me-1 fs-lg align-middle"></i>
+                            <span class="align-middle">Account Settings</span>
+                        </a>
+
+                        <!-- Lock -->
+                        <a href="{{ url('admin/auth-lock-screen') }}" class="dropdown-item">
+                            <i class="ti ti-lock me-1 fs-lg align-middle"></i>
+                            <span class="align-middle">Lock Screen</span>
+                        </a>
+
+                        <!-- Logout -->
+                        <a href="javascript:void(0);" class="dropdown-item text-danger fw-semibold">
+                            <i class="ti ti-logout me-1 fs-lg align-middle"></i>
+                            <span class="align-middle">Log Out</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--- Sidenav Menu -->
+        <div id="sidenav-menu">
+            <ul class="side-nav">
+                <li class="side-nav-title mt-2" data-lang="main">Main</li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#dashboards" aria-expanded="false" aria-controls="dashboards" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-dashboard"></i></span>
+                        <span class="menu-text" data-lang="dashboards">Dashboards</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="dashboards">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="dashboard-ecommerce">Ecommerce</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/dashboard-analytics') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="dashboard-analytics">Analytics</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/dashboard-crm') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="dashboard-crm">CRM</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/dashboard-finance') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="dashboard-finance">Finance</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/dashboard-projects') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="dashboard-projects">Projects</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-title mt-2" data-lang="apps">Apps</li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#ecommerce" aria-expanded="false" aria-controls="ecommerce" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-basket"></i></span>
+                        <span class="menu-text" data-lang="ecommerce">Ecommerce</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="ecommerce">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#products" aria-expanded="false" aria-controls="products" class="side-nav-link">
+                                    <span class="menu-text" data-lang="products">Products</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="products">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-ecommerce-products') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-ecommerce-products">Products</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-ecommerce-products-grid') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-ecommerce-products-grid">Products Grid</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-ecommerce-product-details') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-ecommerce-product-details">Product Details</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-ecommerce-product-add') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-ecommerce-product-add">Add Product</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-ecommerce-categories') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-ecommerce-categories">Categories</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#orders" aria-expanded="false" aria-controls="orders" class="side-nav-link">
+                                    <span class="menu-text" data-lang="orders">Orders</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="orders">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-ecommerce-orders') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-ecommerce-orders">Orders</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-ecommerce-order-details') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-ecommerce-order-details">Order Details</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-ecommerce-order-add') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-ecommerce-order-add">Add/Edit Order</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-ecommerce-customers') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-ecommerce-customers">Customers</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-ecommerce-cart') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-ecommerce-cart">Cart</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-ecommerce-checkout') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-ecommerce-checkout">Checkout</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#sellers" aria-expanded="false" aria-controls="sellers" class="side-nav-link">
+                                    <span class="menu-text" data-lang="sellers">Sellers</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="sellers">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-ecommerce-sellers') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-ecommerce-sellers">Sellers</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-ecommerce-seller-details') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-ecommerce-seller-details">Sellers Details</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-ecommerce-refunds') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-ecommerce-refunds">Refunds</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-ecommerce-reviews') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-ecommerce-reviews">Reviews</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#inventory" aria-expanded="false" aria-controls="inventory" class="side-nav-link">
+                                    <span class="menu-text" data-lang="inventory">Inventory</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="inventory">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-ecommerce-warehouse') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-ecommerce-warehouse">Warehouse</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-ecommerce-product-stocks') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-ecommerce-product-stocks">Product Stocks</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-ecommerce-purchased-orders') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-ecommerce-purchased-orders">Purchased Orders</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#reports" aria-expanded="false" aria-controls="reports" class="side-nav-link">
+                                    <span class="menu-text" data-lang="reports">Reports</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="reports">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-ecommerce-product-views') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-ecommerce-product-views">Product Views</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-ecommerce-sales') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-ecommerce-sales">Sales</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-ecommerce-attributes') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-ecommerce-attributes">Attributes</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-ecommerce-settings') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-ecommerce-settings">Settings</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a href="{{ url('admin/apps-chat') }}" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-message"></i></span>
+                        <span class="menu-text" data-lang="apps-chat">Chat</span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#projects" aria-expanded="false" aria-controls="projects" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-briefcase"></i></span>
+                        <span class="menu-text" data-lang="projects">Projects</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="projects">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-projects-grid') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-projects-grid">My Projects</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-projects-list') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-projects-list">Projects List</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-projects-details') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-projects-details">View Project</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-projects-kanban') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-projects-kanban">Kanban Board</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-projects-team-board') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-projects-team-board">Team Board</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-projects-activity') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-projects-activity">Activity Steam</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#tasks" aria-expanded="false" aria-controls="tasks" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-list-check"></i></span>
+                        <span class="menu-text" data-lang="tasks">Tasks</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="tasks">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-task-list') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-task-list">Task List</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-task-details') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-task-details">Task Details</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-task-create') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-task-create">Create Task</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#invoice" aria-expanded="false" aria-controls="invoice" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-invoice"></i></span>
+                        <span class="menu-text" data-lang="invoice">Invoice</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="invoice">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-invoice-list') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-invoice-list">Invoices</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-invoice-details') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-invoice-details">Single Invoice</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-invoice-create') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-invoice-create">New Invoice</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#crm" aria-expanded="false" aria-controls="crm" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-heart-handshake"></i></span>
+                        <span class="menu-text" data-lang="crm">CRM</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="crm">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-crm-contacts') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-crm-contacts">Contacts</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-crm-opportunities') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-crm-opportunities">Opportunities</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-crm-deals') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-crm-deals">Deals</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-crm-leads') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-crm-leads">Leads</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-crm-pipeline') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-crm-pipeline">Pipeline</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-crm-campaign') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-crm-campaign">Campaign</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-crm-proposals') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-crm-proposals">Proposals</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-crm-estimations') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-crm-estimations">Estimations</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-crm-customers') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-crm-customers">Customers</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-crm-activities') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-crm-activities">Activities</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#users" aria-expanded="false" aria-controls="users" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-users"></i></span>
+                        <span class="menu-text" data-lang="users">Users</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="users">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-users-contacts') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-users-contacts">Contacts</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-users-profile') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-users-profile">Profile</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-users-account-settings') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-users-account-settings">Account Settings</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-users-roles') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-users-roles">Roles</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-users-role-details') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-users-role-details">Role Details</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-users-permissions') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-users-permissions">Permissions</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#finance" aria-expanded="false" aria-controls="finance" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-wallet"></i></span>
+                        <span class="menu-text" data-lang="finance">Finance</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="finance">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#expenses" aria-expanded="false" aria-controls="expenses" class="side-nav-link">
+                                    <span class="menu-text" data-lang="expenses">Expenses</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="expenses">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-finance-expenses') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-finance-expenses">Expenses</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-finance-expense-category') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-finance-expense-category">Expense Category</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-finance-income') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-finance-income">Income</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-finance-transactions') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-finance-transactions">Transactions</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-finance-banks-cards') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-finance-banks-cards">Banks &amp; Cards</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#hrm" aria-expanded="false" aria-controls="hrm" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-accessible"></i></span>
+                        <span class="menu-text" data-lang="hrm">HRM</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="hrm">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#staffs" aria-expanded="false" aria-controls="staffs" class="side-nav-link">
+                                    <span class="menu-text" data-lang="staffs">Staffs</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="staffs">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-hrm-staffs') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-hrm-staffs">Staffs List</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-hrm-staff-profile') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-hrm-staff-profile">Staff Profile</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-hrm-staff-add') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-hrm-staff-add">Add Staffs</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-hrm-departments') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-hrm-departments">Departments</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-hrm-attendance') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-hrm-attendance">Attendance</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#leaves" aria-expanded="false" aria-controls="leaves" class="side-nav-link">
+                                    <span class="menu-text" data-lang="leaves">Leaves</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="leaves">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-hrm-leaves') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-hrm-leaves">Leaves</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-hrm-leave-add') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-hrm-leave-add">Add Leave</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-hrm-holidays') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-hrm-holidays">Holidays</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-hrm-payroll') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-hrm-payroll">Payroll</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-hrm-create-salary-slip') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-hrm-create-salary-slip">Create Salary Slip</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#email" aria-expanded="false" aria-controls="email" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-mailbox"></i></span>
+                        <span class="menu-text" data-lang="email">Email</span>
+                        <span class="badge bg-danger text-white">New</span>
+                    </a>
+                    <div class="collapse" id="email">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-email-inbox') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-email-inbox">Inbox</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-email-details') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-email-details">Details</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-email-compose') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-email-compose">Compose</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#support-center" aria-expanded="false" aria-controls="support-center" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-headset"></i></span>
+                        <span class="menu-text" data-lang="support-center">Support Center</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="support-center">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-ticket-list') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-ticket-list">Ticket List</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-ticket-details') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-ticket-details">Ticket Details</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-ticket-create') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-ticket-create">New Ticket</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#promo" aria-expanded="false" aria-controls="promo" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-discount"></i></span>
+                        <span class="menu-text" data-lang="promo">Promo</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="promo">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-promo-coupons') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-promo-coupons">Coupons</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-promo-gift-cards') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-promo-gift-cards">Gift Cards</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-promo-discounts') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-promo-discounts">Discounts</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#more-apps" aria-expanded="false" aria-controls="more-apps" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-apps"></i></span>
+                        <span class="menu-text" data-lang="more-apps">More Apps</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="more-apps">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-social-feed') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-social-feed">Social Feed</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-pro-ai') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-pro-ai">Pro AI</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-file-manager') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-file-manager">File Manager</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-calendar') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-calendar">Calendar</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-companies') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-companies">Companies</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-todo') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-todo">Todo</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-pin-board') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-pin-board">Pin Board</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-clients') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-clients">Clients</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-outlook') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-outlook">Outlook View</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-vote-list') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-vote-list">Vote List</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-issue-tracker') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-issue-tracker">Issue Tracker</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-api-keys') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-api-keys">API Keys</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/apps-manage') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apps-manage">Manage Apps</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#blog" aria-expanded="false" aria-controls="blog" class="side-nav-link">
+                                    <span class="menu-text" data-lang="blog">Blog</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="blog">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-blog-list') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-blog-list">Blog List</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-blog-grid') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-blog-grid">Blog Grid</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-blog-article') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-blog-article">Article</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-blog-add') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-blog-add">Add Article</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#forum" aria-expanded="false" aria-controls="forum" class="side-nav-link">
+                                    <span class="menu-text" data-lang="forum">Forum</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="forum">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-forum-view') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-forum-view">Forum View</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/apps-forum-post') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="apps-forum-post">Forum Post</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-title mt-2" data-lang="custom-pages">Custom Pages</li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#pages" aria-expanded="false" aria-controls="pages" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-files"></i></span>
+                        <span class="menu-text" data-lang="pages">Pages</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="pages">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/pages-about-us') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="pages-about-us">About Us</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/pages-contact-us') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="pages-contact-us">Contact Us</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/pages-pricing') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="pages-pricing">Pricing</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/pages-empty') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="pages-empty">Empty Page</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/pages-timeline') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="pages-timeline">Timeline</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/pages-gallery') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="pages-gallery">Gallery</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/pages-faq') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="pages-faq">FAQ</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/pages-sitemap') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="pages-sitemap">Sitemap</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/pages-search-results') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="pages-search-results">Search Results</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/pages-coming-soon') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="pages-coming-soon">Coming Soon</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/pages-privacy-policy') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="pages-privacy-policy">Privacy Policy</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/pages-terms-conditions') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="pages-terms-conditions">Terms &amp; Conditions</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#plugins" aria-expanded="false" aria-controls="plugins" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-cpu"></i></span>
+                        <span class="menu-text" data-lang="plugins">Plugins</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="plugins">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/plugins-sortable') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="plugins-sortable">Sortable List</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/plugins-pdf-viewer') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="plugins-pdf-viewer">PDF Viewer</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/plugins-i18') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="plugins-i18">i18 Support</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/plugins-sweet-alerts') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="plugins-sweet-alerts">Sweet Alerts</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/plugins-idle-timer') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="plugins-idle-timer">Idle Timer</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/plugins-pass-meter') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="plugins-pass-meter">Password Meter</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/plugins-clipboard') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="plugins-clipboard">Clipboard</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/plugins-tree-view') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="plugins-tree-view">Tree View</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/plugins-masonry') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="plugins-masonry">Masonry</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/plugins-tour') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="plugins-tour">Tour</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/plugins-animation') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="plugins-animation">Animation</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/plugins-video-player') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="plugins-video-player">Video Player</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#authentication" aria-expanded="false" aria-controls="authentication" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-password-user"></i></span>
+                        <span class="menu-text" data-lang="authentication">Authentication</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="authentication">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#auth-basic" aria-expanded="false" aria-controls="auth-basic" class="side-nav-link">
+                                    <span class="menu-text" data-lang="auth-basic">Basic</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="auth-basic">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-sign-in') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-sign-in">Sign In</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-sign-up') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-sign-up">Sign Up</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-reset-pass') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-reset-pass">Reset Password</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-new-pass') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-new-pass">New Password</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-two-factor') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-two-factor">Two Factor</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-lock-screen') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-lock-screen">Lock Screen</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-success-mail') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-success-mail">Success Mail</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-login-pin') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-login-pin">Login with PIN</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-delete-account') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-delete-account">Delete Account</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#auth-card" aria-expanded="false" aria-controls="auth-card" class="side-nav-link">
+                                    <span class="menu-text" data-lang="auth-card">Card</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="auth-card">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-card-sign-in') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-card-sign-in">Sign In</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-card-sign-up') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-card-sign-up">Sign Up</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-card-reset-pass') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-card-reset-pass">Reset Password</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-card-new-pass') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-card-new-pass">New Password</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-card-two-factor') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-card-two-factor">Two Factor</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-card-lock-screen') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-card-lock-screen">Lock Screen</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-card-success-mail') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-card-success-mail">Success Mail</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-card-login-pin') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-card-login-pin">Login with PIN</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-card-delete-account') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-card-delete-account">Delete Account</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#auth-split" aria-expanded="false" aria-controls="auth-split" class="side-nav-link">
+                                    <span class="menu-text" data-lang="auth-split">Split</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="auth-split">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-split-sign-in') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-split-sign-in">Sign In</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-split-sign-up') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-split-sign-up">Sign Up</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-split-reset-pass') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-split-reset-pass">Reset Password</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-split-new-pass') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-split-new-pass">New Password</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-split-two-factor') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-split-two-factor">Two Factor</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-split-lock-screen') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-split-lock-screen">Lock Screen</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-split-success-mail') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-split-success-mail">Success Mail</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-split-login-pin') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-split-login-pin">Login with PIN</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/auth-split-delete-account') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="auth-split-delete-account">Delete Account</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#error-pages" aria-expanded="false" aria-controls="error-pages" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-alert-triangle"></i></span>
+                        <span class="menu-text" data-lang="error-pages">Error Pages</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="error-pages">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/error-400') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="error-400">400 Bad Request</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/error-401') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="error-401">401 Unauthorized</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/error-403') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="error-403">403 Forbidden</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/error-404') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="error-404">404 Not Found</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/error-408') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="error-408">408 Request Timeout</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/error-500') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="error-500">500 Internal Server</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/error-maintenance') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="error-maintenance">Maintenance</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-title mt-2" data-lang="layouts">Layouts</li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#layout-options" aria-expanded="false" aria-controls="layout-options" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-layout"></i></span>
+                        <span class="menu-text" data-lang="layout-options">Layout Options</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="layout-options">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/layouts-horizontal') }}" class="side-nav-link" target="_blank">
+                                    <span class="menu-text" data-lang="layouts-horizontal">Horizontal</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/layouts-boxed') }}" class="side-nav-link" target="_blank">
+                                    <span class="menu-text" data-lang="layouts-boxed">Boxed</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/layouts-scrollable') }}" class="side-nav-link" target="_blank">
+                                    <span class="menu-text" data-lang="layouts-scrollable">Scrollable</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/layouts-compact') }}" class="side-nav-link" target="_blank">
+                                    <span class="menu-text" data-lang="layouts-compact">Compact</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/layouts-preloader') }}" class="side-nav-link" target="_blank">
+                                    <span class="menu-text" data-lang="layouts-preloader">Preloader</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#sidebars" aria-expanded="false" aria-controls="sidebars" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-layout-sidebar-inactive"></i></span>
+                        <span class="menu-text" data-lang="sidebars">Sidebars</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebars">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/layouts-sidebar-light') }}" class="side-nav-link" target="_blank">
+                                    <span class="menu-text" data-lang="layouts-sidebar-light">Light Menu</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/layouts-sidebar-gradient') }}" class="side-nav-link" target="_blank">
+                                    <span class="menu-text" data-lang="layouts-sidebar-gradient">Gradient Menu</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/layouts-sidebar-gray') }}" class="side-nav-link" target="_blank">
+                                    <span class="menu-text" data-lang="layouts-sidebar-gray">Gray Menu</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/layouts-sidebar-image') }}" class="side-nav-link" target="_blank">
+                                    <span class="menu-text" data-lang="layouts-sidebar-image">Image Menu</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/layouts-sidebar-compact') }}" class="side-nav-link" target="_blank">
+                                    <span class="menu-text" data-lang="layouts-sidebar-compact">Compact Menu</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/layouts-sidebar-on-hover') }}" class="side-nav-link" target="_blank">
+                                    <span class="menu-text" data-lang="layouts-sidebar-on-hover">On Hover Menu</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/layouts-sidebar-offcanvas') }}" class="side-nav-link" target="_blank">
+                                    <span class="menu-text" data-lang="layouts-sidebar-offcanvas">Offcanvas Menu</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/layouts-sidebar-no-icons') }}" class="side-nav-link" target="_blank">
+                                    <span class="menu-text" data-lang="layouts-sidebar-no-icons">No Icons with Lines</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/layouts-sidebar-with-lines') }}" class="side-nav-link" target="_blank">
+                                    <span class="menu-text" data-lang="layouts-sidebar-with-lines">Sidebar with Lines</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#topbar" aria-expanded="false" aria-controls="topbar" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-layout-bottombar"></i></span>
+                        <span class="menu-text" data-lang="topbar">Topbar</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="topbar">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/layouts-topbar-dark') }}" class="side-nav-link" target="_blank">
+                                    <span class="menu-text" data-lang="layouts-topbar-dark">Dark Topbar</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/layouts-topbar-gray') }}" class="side-nav-link" target="_blank">
+                                    <span class="menu-text" data-lang="layouts-topbar-gray">Gray Topbar</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/layouts-topbar-gradient') }}" class="side-nav-link" target="_blank">
+                                    <span class="menu-text" data-lang="layouts-topbar-gradient">Gradient Topbar</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-title mt-2" data-lang="components">Components</li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#base-ui" aria-expanded="false" aria-controls="base-ui" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-components"></i></span>
+                        <span class="menu-text" data-lang="base-ui">Base UI</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="base-ui">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-accordions') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-accordions">Accordions</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-alerts') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-alerts">Alerts</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-buttons') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-buttons">Buttons</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-badges') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-badges">Badges</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-colors') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-colors">Colors</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-breadcrumb') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-breadcrumb">Breadcrumb</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-cards') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-cards">Cards</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-carousel') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-carousel">Carousel</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-collapse') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-collapse">Collapse</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-images') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-images">Images</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-dropdowns') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-dropdowns">Dropdowns</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-videos') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-videos">Videos</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-grid') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-grid">Grid Options</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-links') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-links">Links</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-list-group') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-list-group">List Group</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-modals') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-modals">Modals</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-notifications') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-notifications">Notifications</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-offcanvas') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-offcanvas">Offcanvas</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-placeholders') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-placeholders">Placeholders</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-pagination') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-pagination">Pagination</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-popovers') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-popovers">Popovers</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-progress') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-progress">Progress</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-scrollspy') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-scrollspy">Scrollspy</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-spinners') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-spinners">Spinners</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-tabs') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-tabs">Tabs</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-tooltips') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-tooltips">Tooltips</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-typography') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-typography">Typography</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/ui-utilities') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="ui-utilities">Utilities</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#widgets" aria-expanded="false" aria-controls="widgets" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-category"></i></span>
+                        <span class="menu-text" data-lang="widgets">Widgets</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="widgets">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/widgets-charts') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="widgets-charts">Charts</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/widgets-mixed') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="widgets-mixed">Mixed</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/widgets-social') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="widgets-social">Social</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/widgets-statistics') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="widgets-statistics">Statistics</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/widgets-weather') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="widgets-weather">Weather</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-chart-donut"></i></span>
+                        <span class="menu-text" data-lang="charts">Charts</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="charts">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#apex-charts" aria-expanded="false" aria-controls="apex-charts" class="side-nav-link">
+                                    <span class="menu-text" data-lang="apex-charts">Apex Charts</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="apex-charts">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-area') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-area">Area</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-bar') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-bar">Bar</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-bubble') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-bubble">Bubble</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-candlestick') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-candlestick">Candlestick</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-column') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-column">Column</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-heatmap') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-heatmap">Heatmap</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-line') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-line">Line</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-mixed') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-mixed">Mixed</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-timeline') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-timeline">Timeline</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-boxplot') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-boxplot">Boxplot</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-treemap') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-treemap">Treemap</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-pie') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-pie">Pie</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-radar') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-radar">Radar</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-radialbar') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-radialbar">RadialBar</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-scatter') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-scatter">Scatter</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-polar-area') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-polar-area">Polar Area</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-sparklines') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-sparklines">Sparklines</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-range') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-range">Range</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-funnel') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-funnel">Funnel</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-apex-slope') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-apex-slope">Slope</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#echarts" aria-expanded="false" aria-controls="echarts" class="side-nav-link">
+                                    <span class="menu-text" data-lang="echarts">Echarts</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="echarts">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-echart-line') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-echart-line">Line</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-echart-bar') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-echart-bar">Bar</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-echart-pie') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-echart-pie">Pie</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-echart-scatter') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-echart-scatter">Scatter</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-echart-geo-map') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-echart-geo-map">GEO Map</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-echart-gauge') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-echart-gauge">Gauge</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-echart-candlestick') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-echart-candlestick">Candlestick</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-echart-area') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-echart-area">Area</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-echart-radar') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-echart-radar">Radar</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-echart-heatmap') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-echart-heatmap">Heatmap</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-echart-other') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-echart-other">Other</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#chartjs" aria-expanded="false" aria-controls="chartjs" class="side-nav-link">
+                                    <span class="menu-text" data-lang="chartjs">Chart Js</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="chartjs">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-chartjs-area') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-chartjs-area">Area</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-chartjs-bar') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-chartjs-bar">Bar</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-chartjs-line') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-chartjs-line">Line</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/charts-chartjs-other') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="charts-chartjs-other">Other</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#forms" aria-expanded="false" aria-controls="forms" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-clipboard-list"></i></span>
+                        <span class="menu-text" data-lang="forms">Forms</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="forms">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/form-elements') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="form-elements">Basic Elements</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/form-validation') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="form-validation">Validation</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/form-wizard') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="form-wizard">Wizard</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/form-select') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="form-select">Select</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/form-pickers') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="form-pickers">Pickers</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/form-fileuploads') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="form-fileuploads">File Uploads</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/form-text-editors') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="form-text-editors">Text Editors</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/form-range-slider') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="form-range-slider">Range Slider</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/form-cropper') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="form-cropper">Image Cropper</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/form-layout') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="form-layout">Layouts</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/form-other-plugin') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="form-other-plugin">Other Plugins</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-table-column"></i></span>
+                        <span class="menu-text" data-lang="tables">Tables</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="tables">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/tables-static') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="tables-static">Static Tables</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/tables-custom') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="tables-custom">Custom Tables</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#datatables" aria-expanded="false" aria-controls="datatables" class="side-nav-link">
+                                    <span class="menu-text" data-lang="datatables">DataTables</span>
+                                    <span class="badge bg-success text-white">15</span>
+                                </a>
+                                <div class="collapse" id="datatables">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/tables-datatables-basic') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="tables-datatables-basic">Basic</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/tables-datatables-export-data') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="tables-datatables-export-data">Export Data</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/tables-datatables-select') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="tables-datatables-select">Select</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/tables-datatables-ajax') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="tables-datatables-ajax">Ajax</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/tables-datatables-javascript') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="tables-datatables-javascript">Javascript Source</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/tables-datatables-rendering') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="tables-datatables-rendering">Data Rendering</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/tables-datatables-scroll') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="tables-datatables-scroll">Scroll</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/tables-datatables-fixed-columns') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="tables-datatables-fixed-columns">Fixed Columns</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/tables-datatables-fixed-header') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="tables-datatables-fixed-header">Fixed Header</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/tables-datatables-columns') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="tables-datatables-columns">Show &amp; Hide Column</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/tables-datatables-child-rows') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="tables-datatables-child-rows">Child Rows</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/tables-datatables-column-searching') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="tables-datatables-column-searching">Column Searching</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/tables-datatables-range-search') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="tables-datatables-range-search">Range Search</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/tables-datatables-rows-add') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="tables-datatables-rows-add">Add Rows</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="{{ url('admin/tables-datatables-checkbox-select') }}" class="side-nav-link">
+                                                <span class="menu-text" data-lang="tables-datatables-checkbox-select">Checkbox Select</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-icons"></i></span>
+                        <span class="menu-text" data-lang="icons">Icons</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="icons">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/icons-tabler') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="icons-tabler">Tabler</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/icons-lucide') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="icons-lucide">Lucide</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/icons-remix') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="icons-remix">Remix</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/icons-solar-duotone') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="icons-solar-duotone">Solar Duotone</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/icons-flags') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="icons-flags">Flags</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#maps" aria-expanded="false" aria-controls="maps" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-map"></i></span>
+                        <span class="menu-text" data-lang="maps">Maps</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="maps">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/maps-google') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="maps-google">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/maps-vector') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="maps-vector">Vector Maps</span>
+                                </a>
+                            </li>
+                            <li class="side-nav-item">
+                                <a href="{{ url('admin/maps-leaflet') }}" class="side-nav-link">
+                                    <span class="menu-text" data-lang="maps-leaflet">Leaflet Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-title mt-2" data-lang="menu-items">Menu Items</li>
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#menu-levels" aria-expanded="false" aria-controls="menu-levels" class="side-nav-link">
+                        <span class="menu-icon"><i class="ti ti-sitemap"></i></span>
+                        <span class="menu-text" data-lang="menu-levels">Menu Levels</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="menu-levels">
+                        <ul class="sub-menu">
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#second-level" aria-expanded="false" aria-controls="second-level" class="side-nav-link">
+                                    <span class="menu-text" data-lang="second-level">Second Level</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="second-level">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="#" class="side-nav-link">
+                                                <span class="menu-text" data-lang="menu-item-1">Item 2.1</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="#" class="side-nav-link">
+                                                <span class="menu-text" data-lang="menu-item-2">Item 2.2</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#second-level-2" aria-expanded="false" aria-controls="second-level-2" class="side-nav-link">
+                                    <span class="menu-text" data-lang="second-level-2">Second Level</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="second-level-2">
+                                    <ul class="sub-menu">
+                                        <li class="side-nav-item">
+                                            <a href="#" class="side-nav-link">
+                                                <span class="menu-text" data-lang="menu-item-3">Item 2.1</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a data-bs-toggle="collapse" href="#menu-item-4" aria-expanded="false" aria-controls="menu-item-4" class="side-nav-link">
+                                                <span class="menu-text" data-lang="menu-item-4">Item 2.2</span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="menu-item-4">
+                                                <ul class="sub-menu">
+                                                    <li class="side-nav-item">
+                                                        <a href="#" class="side-nav-link">
+                                                            <span class="menu-text" data-lang="menu-item-5">Item 3.1</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="side-nav-item">
+                                                        <a href="#" class="side-nav-link">
+                                                            <span class="menu-text" data-lang="menu-item-6">Item 3.2</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
+                    <a href="#" class="side-nav-link disabled">
+                        <span class="menu-icon"><i class="ti ti-ban"></i></span>
+                        <span class="menu-text" data-lang="disabled-menu">Disabled Menu</span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="#" class="side-nav-link special-menu">
+                        <span class="menu-icon"><i class="ti ti-star"></i></span>
+                        <span class="menu-text" data-lang="special-menu">Special Menu</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sidenav Menu End -->
+
+
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="container-fluid">
+                    <div class="page-title-head d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <h4 class="page-main-title m-0">Show & Hide Columns</h4>
+                        </div>
+
+                        <div class="text-end">
+                            <ol class="breadcrumb m-0 py-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Paces</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Datatables</a></li>
+                                <li class="breadcrumb-item active">Show & Hide Columns</li>
+                            </ol>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header justify-content-between">
+                                    <h4 class="card-title">Example</h4>
+                                    <a href="https://datatables.net/examples/api/show_hide.html" target="_blank" class="icon-link icon-link-hover link-primary fw-semibold">
+                                        View Docs
+                                        <i class="ti ti-arrow-right bi align-middle fs-lg"></i>
+                                    </a>
+                                </div>
+
+                                <div class="card-body">
+                                    <table id="show-hide-column" class="table table-striped dt-responsive align-middle mb-0">
+                                        <thead class="thead-sm text-uppercase fs-xxs">
+                                            <tr>
+                                                <th>Company</th>
+                                                <th>Symbol</th>
+                                                <th>Price</th>
+                                                <th>Change</th>
+                                                <th>Volume</th>
+                                                <th>Market Cap</th>
+                                                <th>Rating</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Apple Inc.</td>
+                                                <td>AAPL</td>
+                                                <td>$2109.53</td>
+                                                <td>-0.42%</td>
+                                                <td>48,374,838</td>
+                                                <td>$53.59B</td>
+                                                <td>4.7 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-danger">Bearish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Microsoft Corp.</td>
+                                                <td>MSFT</td>
+                                                <td>$450.98</td>
+                                                <td>-2.04%</td>
+                                                <td>26,604,335</td>
+                                                <td>$927.77B</td>
+                                                <td>3.8 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-danger">Bearish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Alphabet Inc.</td>
+                                                <td>GOOGL</td>
+                                                <td>$2803.77</td>
+                                                <td>+0.68%</td>
+                                                <td>22,545,332</td>
+                                                <td>$1.88T</td>
+                                                <td>4.6 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Amazon.com Inc.</td>
+                                                <td>AMZN</td>
+                                                <td>$3470.79</td>
+                                                <td>+1.34%</td>
+                                                <td>32,548,923</td>
+                                                <td>$1.75T</td>
+                                                <td>4.3 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Meta Platforms</td>
+                                                <td>META</td>
+                                                <td>$395.68</td>
+                                                <td>-0.76%</td>
+                                                <td>21,134,438</td>
+                                                <td>$1.06T</td>
+                                                <td>4.2 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-danger">Bearish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tesla Inc.</td>
+                                                <td>TSLA</td>
+                                                <td>$1034.48</td>
+                                                <td>+2.04%</td>
+                                                <td>18,622,988</td>
+                                                <td>$1.08T</td>
+                                                <td>5.0 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>NVIDIA Corp.</td>
+                                                <td>NVDA</td>
+                                                <td>$288.63</td>
+                                                <td>+3.12%</td>
+                                                <td>27,014,934</td>
+                                                <td>$710.89B</td>
+                                                <td>4.8 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>JPMorgan Chase</td>
+                                                <td>JPM</td>
+                                                <td>$158.47</td>
+                                                <td>-0.23%</td>
+                                                <td>13,523,487</td>
+                                                <td>$464.93B</td>
+                                                <td>3.9 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-danger">Bearish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Johnson & Johnson</td>
+                                                <td>JNJ</td>
+                                                <td>$174.89</td>
+                                                <td>+0.45%</td>
+                                                <td>12,789,456</td>
+                                                <td>$457.43B</td>
+                                                <td>4.1 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Visa Inc.</td>
+                                                <td>V</td>
+                                                <td>$226.44</td>
+                                                <td>+0.19%</td>
+                                                <td>17,532,998</td>
+                                                <td>$472.35B</td>
+                                                <td>4.7 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Walmart Inc.</td>
+                                                <td>WMT</td>
+                                                <td>$150.76</td>
+                                                <td>+0.55%</td>
+                                                <td>14,888,342</td>
+                                                <td>$421.57B</td>
+                                                <td>3.9 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Procter & Gamble</td>
+                                                <td>PG</td>
+                                                <td>$136.44</td>
+                                                <td>-0.21%</td>
+                                                <td>9,563,721</td>
+                                                <td>$338.56B</td>
+                                                <td>4.5 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-danger">Bearish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>UnitedHealth Group</td>
+                                                <td>UNH</td>
+                                                <td>$438.57</td>
+                                                <td>+1.34%</td>
+                                                <td>7,903,765</td>
+                                                <td>$385.26B</td>
+                                                <td>4.4 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Home Depot</td>
+                                                <td>HD</td>
+                                                <td>$340.78</td>
+                                                <td>+0.23%</td>
+                                                <td>10,245,120</td>
+                                                <td>$283.74B</td>
+                                                <td>4.2 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mastercard Inc.</td>
+                                                <td>MA</td>
+                                                <td>$392.90</td>
+                                                <td>-1.01%</td>
+                                                <td>8,431,999</td>
+                                                <td>$390.87B</td>
+                                                <td>4.3 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-danger">Bearish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pfizer Inc.</td>
+                                                <td>PFE</td>
+                                                <td>$45.22</td>
+                                                <td>+2.07%</td>
+                                                <td>15,345,324</td>
+                                                <td>$252.53B</td>
+                                                <td>4.0 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Intel Corp.</td>
+                                                <td>INTC</td>
+                                                <td>$54.83</td>
+                                                <td>-0.72%</td>
+                                                <td>18,442,560</td>
+                                                <td>$224.67B</td>
+                                                <td>3.7 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-danger">Bearish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Coca-Cola Co.</td>
+                                                <td>KO</td>
+                                                <td>$59.63</td>
+                                                <td>+0.11%</td>
+                                                <td>19,870,902</td>
+                                                <td>$255.45B</td>
+                                                <td>4.4 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Disney</td>
+                                                <td>DIS</td>
+                                                <td>$179.56</td>
+                                                <td>-0.93%</td>
+                                                <td>8,502,109</td>
+                                                <td>$328.72B</td>
+                                                <td>3.9 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-danger">Bearish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cisco Systems</td>
+                                                <td>CSCO</td>
+                                                <td>$54.12</td>
+                                                <td>+0.88%</td>
+                                                <td>14,730,222</td>
+                                                <td>$233.78B</td>
+                                                <td>4.3 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>PepsiCo Inc.</td>
+                                                <td>PEP</td>
+                                                <td>$155.68</td>
+                                                <td>+0.75%</td>
+                                                <td>6,578,987</td>
+                                                <td>$215.58B</td>
+                                                <td>4.2 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Verizon Communications</td>
+                                                <td>VZ</td>
+                                                <td>$50.74</td>
+                                                <td>-0.67%</td>
+                                                <td>16,346,523</td>
+                                                <td>$205.38B</td>
+                                                <td>3.8 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-danger">Bearish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>AT&T Inc.</td>
+                                                <td>T</td>
+                                                <td>$22.51</td>
+                                                <td>+1.22%</td>
+                                                <td>27,528,906</td>
+                                                <td>$161.83B</td>
+                                                <td>4.0 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>AbbVie Inc.</td>
+                                                <td>ABBV</td>
+                                                <td>$148.13</td>
+                                                <td>+1.15%</td>
+                                                <td>9,582,210</td>
+                                                <td>$259.78B</td>
+                                                <td>4.5 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Merck & Co.</td>
+                                                <td>MRK</td>
+                                                <td>$85.27</td>
+                                                <td>-0.31%</td>
+                                                <td>11,402,899</td>
+                                                <td>$217.74B</td>
+                                                <td>4.4 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-danger">Bearish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Lockheed Martin</td>
+                                                <td>LMT</td>
+                                                <td>$385.12</td>
+                                                <td>+0.68%</td>
+                                                <td>3,251,432</td>
+                                                <td>$105.02B</td>
+                                                <td>4.8 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3M Company</td>
+                                                <td>MMM</td>
+                                                <td>$178.36</td>
+                                                <td>-0.14%</td>
+                                                <td>5,643,980</td>
+                                                <td>$106.95B</td>
+                                                <td>4.2 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-danger">Bearish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>American Express</td>
+                                                <td>AXP</td>
+                                                <td>$160.95</td>
+                                                <td>+0.88%</td>
+                                                <td>7,125,347</td>
+                                                <td>$146.57B</td>
+                                                <td>4.4 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>McDonald's Corp.</td>
+                                                <td>MCD</td>
+                                                <td>$258.68</td>
+                                                <td>+0.45%</td>
+                                                <td>10,023,576</td>
+                                                <td>$194.35B</td>
+                                                <td>4.6 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>ExxonMobil</td>
+                                                <td>XOM</td>
+                                                <td>$62.32</td>
+                                                <td>+0.12%</td>
+                                                <td>15,658,723</td>
+                                                <td>$264.59B</td>
+                                                <td>4.0 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chevron Corp.</td>
+                                                <td>CVX</td>
+                                                <td>$172.94</td>
+                                                <td>-0.11%</td>
+                                                <td>8,203,474</td>
+                                                <td>$318.75B</td>
+                                                <td>4.5 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-danger">Bearish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Colgate-Palmolive</td>
+                                                <td>CL</td>
+                                                <td>$78.92</td>
+                                                <td>+0.27%</td>
+                                                <td>10,298,121</td>
+                                                <td>$67.95B</td>
+                                                <td>4.1 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Abbott Laboratories</td>
+                                                <td>ABT</td>
+                                                <td>$119.93</td>
+                                                <td>+0.51%</td>
+                                                <td>7,287,634</td>
+                                                <td>$209.33B</td>
+                                                <td>4.6 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>NextEra Energy</td>
+                                                <td>NEE</td>
+                                                <td>$74.31</td>
+                                                <td>-0.76%</td>
+                                                <td>8,146,257</td>
+                                                <td>$151.48B</td>
+                                                <td>4.3 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-danger">Bearish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Danaher Corporation</td>
+                                                <td>DHR</td>
+                                                <td>$256.12</td>
+                                                <td>+1.20%</td>
+                                                <td>6,241,544</td>
+                                                <td>$186.57B</td>
+                                                <td>4.7 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Raytheon Technologies</td>
+                                                <td>RTX</td>
+                                                <td>$89.45</td>
+                                                <td>+0.81%</td>
+                                                <td>10,123,556</td>
+                                                <td>$133.83B</td>
+                                                <td>4.4 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Intel Corp.</td>
+                                                <td>INTC</td>
+                                                <td>$45.13</td>
+                                                <td>-0.98%</td>
+                                                <td>14,015,888</td>
+                                                <td>$185.77B</td>
+                                                <td>3.7 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-danger">Bearish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Target Corp.</td>
+                                                <td>TGT</td>
+                                                <td>$252.12</td>
+                                                <td>+0.45%</td>
+                                                <td>7,412,658</td>
+                                                <td>$132.18B</td>
+                                                <td>4.2 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>AbbVie</td>
+                                                <td>ABBV</td>
+                                                <td>$142.83</td>
+                                                <td>+1.19%</td>
+                                                <td>9,725,439</td>
+                                                <td>$246.68B</td>
+                                                <td>4.4 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Philip Morris</td>
+                                                <td>PM</td>
+                                                <td>$98.21</td>
+                                                <td>+0.35%</td>
+                                                <td>10,653,122</td>
+                                                <td>$157.56B</td>
+                                                <td>4.3 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>General Dynamics</td>
+                                                <td>GD</td>
+                                                <td>$220.57</td>
+                                                <td>+0.78%</td>
+                                                <td>6,232,367</td>
+                                                <td>$75.99B</td>
+                                                <td>4.6 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Johnson & Johnson</td>
+                                                <td>JNJ</td>
+                                                <td>$175.98</td>
+                                                <td>+1.02%</td>
+                                                <td>9,124,487</td>
+                                                <td>$461.98B</td>
+                                                <td>4.8 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Biogen Inc.</td>
+                                                <td>BIIB</td>
+                                                <td>$273.62</td>
+                                                <td>-0.56%</td>
+                                                <td>5,890,444</td>
+                                                <td>$41.88B</td>
+                                                <td>4.0 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-danger">Bearish</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Uber Technologies</td>
+                                                <td>UBER</td>
+                                                <td>$51.26</td>
+                                                <td>+0.18%</td>
+                                                <td>11,298,673</td>
+                                                <td>$87.89B</td>
+                                                <td>4.3 ★</td>
+                                                <td>
+                                                    <span class="badge badge-label badge-soft-success">Bullish</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- end card-body-->
+                            </div>
+                            <!-- end card-->
+                        </div>
+                        <!-- end col-->
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- container -->
+
+                <!-- Footer Start -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 text-center text-md-start">
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script>
+                                © Paces - By <span class="fw-bold text-decoration-underline text-uppercase text-reset fs-12">Coderthemes</span>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-none d-md-flex justify-content-end gap-3">
+                                    <a href="javascript: void(0);" class="link-reset">About</a>
+                                    <a href="javascript: void(0);" class="link-reset">Support</a>
+                                    <a href="javascript: void(0);" class="link-reset">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+
+        <div class="offcanvas offcanvas-end overflow-hidden" tabindex="-1" id="theme-settings-offcanvas">
+            <div class="d-flex justify-content-between text-bg-primary gap-2 p-3" style="background-image: url({{ asset('admin/assets/images/settings-bg.png') }})">
+                <div>
+                    <h5 class="mb-1 fw-bold text-white text-uppercase">Admin Customizer</h5>
+                    <p class="text-white text-opacity-75 fst-italic fw-medium mb-0">Easily configure layout, styles, and preferences for your admin interface.</p>
+                </div>
+
+                <div class="flex-grow-0">
+                    <button type="button" class="d-block btn btn-sm bg-white bg-opacity-25 text-white rounded-circle btn-icon" data-bs-dismiss="offcanvas">
+                        <i class="ti ti-x fs-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="offcanvas-body theme-customizer-bar p-0 h-100" data-simplebar="">
+                <div id="skin" class="p-3 border-bottom border-dashed">
+                    <h5 class="mb-3 fw-bold">Select Theme</h5>
+                    <div class="row g-3">
+                        <div class="col-6" id="skin-default">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-default" value="default" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-default">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-default.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Default</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-minimal">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-minimal" value="minimal" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-minimal">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-minimal.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Minimal</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-modern">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-modern" value="modern" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-modern">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-modern.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Modern</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-material">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-material" value="material" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-material">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-material.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Material</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-saas">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-saas" value="saas" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-saas">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-saas.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">SaaS</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-flat">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-flat" value="flat" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-flat">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-flat.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Flat</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-galaxy">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-galaxy" value="galaxy" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-galaxy">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-galaxy.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Galaxy</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-luxe">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-luxe" value="luxe" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-luxe">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-luxe.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Luxe</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-retro">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-retro" value="retro" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-retro">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-retro.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Retro</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-neon">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-neon" value="neon" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-neon">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-neon.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Neon</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-pixel">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-pixel" value="pixel" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-pixel">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-pixel.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Pixel</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-soft">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-soft" value="soft" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-soft">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-soft.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Soft</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-mono">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-mono" value="mono" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-mono">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-mono.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Mono</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-prism">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-prism" value="prism" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-prism">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-prism.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Prism</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-nova">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-nova" value="nova" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-nova">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-nova.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Nova</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-zen">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-zen" value="zen" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-zen">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-zen.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Zen</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-elegant">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-elegant" value="elegant" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-elegant">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-elegant.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Elegant</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-vivid">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-vivid" value="vivid" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-vivid">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-vivid.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Vivid</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-aurora">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-aurora" value="aurora" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-aurora">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-aurora.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Aurora</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-crystal">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-crystal" value="crystal" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-crystal">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-crystal.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Crystal</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-matrix">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-matrix" value="matrix" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-matrix">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-matrix.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Matrix</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-orbit">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-orbit" value="orbit" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-orbit">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-orbit.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Orbit</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-neo">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-neo" value="neo" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-neo">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-neo.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Neo</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-silver">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-silver" value="silver" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-silver">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-silver.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Silver</h5>
+                        </div>
+
+                        <div class="col-6" id="skin-xenon">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-skin" id="demo-skin-xenon" value="xenon" />
+                                <label class="form-check-label p-0 w-100" for="demo-skin-xenon">
+                                    <img src="{{ asset('admin/assets/images/layouts/skin-xenon.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Xenon</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="theme" class="p-3 border-bottom border-dashed">
+                    <h5 class="mb-3 fw-bold">Color Scheme</h5>
+                    <div class="row">
+                        <div class="col-4" id="theme-light">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-bs-theme" id="layout-color-light" value="light" />
+                                <label class="form-check-label p-0 w-100" for="layout-color-light">
+                                    <img src="{{ asset('admin/assets/images/layouts/theme-light.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Light</h5>
+                        </div>
+
+                        <div class="col-4" id="theme-dark">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-bs-theme" id="layout-color-dark" value="dark" />
+                                <label class="form-check-label p-0 w-100" for="layout-color-dark">
+                                    <img src="{{ asset('admin/assets/images/layouts/theme-dark.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Dark</h5>
+                        </div>
+
+                        <div class="col-4" id="theme-system">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-bs-theme" id="layout-color-system" value="system" />
+                                <label class="form-check-label p-0 w-100" for="layout-color-system">
+                                    <img src="{{ asset('admin/assets/images/layouts/theme-system.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">System</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="topbar-color" class="p-3 border-bottom border-dashed">
+                    <h5 class="mb-3 fw-bold">Topbar Color</h5>
+
+                    <div class="row g-3">
+                        <div class="col-4" id="topbar-color-light">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-topbar-color" id="layout-topbar-color-light" value="light" />
+                                <label class="form-check-label p-0 w-100" for="layout-topbar-color-light">
+                                    <img src="{{ asset('admin/assets/images/layouts/topbar-color-light.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="text-center text-muted mt-2 mb-0">Light</h5>
+                        </div>
+
+                        <div class="col-4" id="topbar-color-dark">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-topbar-color" id="layout-topbar-color-dark" value="dark" />
+                                <label class="form-check-label p-0 w-100" for="layout-topbar-color-dark">
+                                    <img src="{{ asset('admin/assets/images/layouts/topbar-color-dark.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="fs-sm text-center text-muted mt-2 mb-0">Dark</h5>
+                        </div>
+
+                        <div class="col-4" id="topbar-color-gray">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-topbar-color" id="layout-topbar-color-gray" value="gray" />
+                                <label class="form-check-label p-0 w-100" for="layout-topbar-color-gray">
+                                    <img src="{{ asset('admin/assets/images/layouts/topbar-color-gray.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="fs-sm text-center text-muted mt-2 mb-0">Gray</h5>
+                        </div>
+
+                        <div class="col-4" id="topbar-color-gradient">
+                            <div class="form-check card-radio">
+                                <input class="form-check-input" type="radio" name="data-topbar-color" id="layout-topbar-color-gradient" value="gradient" />
+                                <label class="form-check-label p-0 w-100" for="layout-topbar-color-gradient">
+                                    <img src="{{ asset('admin/assets/images/layouts/topbar-color-gradient.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="fs-sm text-center text-muted mt-2 mb-0">Gradient</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sidenav-color" class="p-3 border-bottom border-dashed">
+                    <h5 class="mb-3 fw-bold">Sidenav Color</h5>
+
+                    <div class="row g-3">
+                        <div class="col-4" id="sidenav-color-light">
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-menu-color" id="layout-sidenav-color-light" value="light" />
+                                <label class="form-check-label p-0 w-100" for="layout-sidenav-color-light">
+                                    <img src="{{ asset('admin/assets/images/layouts/sidenav-color-light.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="fs-sm text-center text-muted mt-2 mb-0">Light</h5>
+                        </div>
+
+                        <div class="col-4" id="sidenav-color-dark">
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-menu-color" id="layout-sidenav-color-dark" value="dark" />
+                                <label class="form-check-label p-0 w-100" for="layout-sidenav-color-dark">
+                                    <img src="{{ asset('admin/assets/images/layouts/sidenav-color-dark.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="fs-sm text-center text-muted mt-2 mb-0">Dark</h5>
+                        </div>
+
+                        <div class="col-4" id="sidenav-color-gray">
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-menu-color" id="layout-sidenav-color-gray" value="gray" />
+                                <label class="form-check-label p-0 w-100" for="layout-sidenav-color-gray">
+                                    <img src="{{ asset('admin/assets/images/layouts/sidenav-color-gray.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="fs-sm text-center text-muted mt-2 mb-0">Gray</h5>
+                        </div>
+
+                        <div class="col-4" id="sidenav-color-gradient">
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-menu-color" id="layout-sidenav-color-gradient" value="gradient" />
+                                <label class="form-check-label p-0 w-100" for="layout-sidenav-color-gradient">
+                                    <img src="{{ asset('admin/assets/images/layouts/sidenav-color-gradient.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="fs-sm text-center text-muted mt-2 mb-0">Gradient</h5>
+                        </div>
+                        <div class="col-4" id="sidenav-color-image">
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-menu-color" id="layout-sidenav-color-image" value="image" />
+                                <label class="form-check-label p-0 w-100" for="layout-sidenav-color-image">
+                                    <img src="{{ asset('admin/assets/images/layouts/sidenav-color-image.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="fs-sm text-center text-muted mt-2 mb-0">Image</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sidenav-size" class="p-3 border-bottom border-dashed">
+                    <h5 class="mb-3 fw-bold">Sidebar Size</h5>
+
+                    <div class="row g-3">
+                        <div class="col-4" id="sidenav-size-default">
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-sidenav-size" id="layout-sidenav-size-default" value="default" />
+                                <label class="form-check-label p-0 w-100" for="layout-sidenav-size-default">
+                                    <img src="{{ asset('admin/assets/images/layouts/sidenav-size-default.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="mb-0 text-center text-muted mt-2">Default</h5>
+                        </div>
+
+                        <div class="col-4" id="sidenav-size-compact">
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-sidenav-size" id="layout-sidenav-size-compact" value="compact" />
+                                <label class="form-check-label p-0 w-100" for="layout-sidenav-size-compact">
+                                    <img src="{{ asset('admin/assets/images/layouts/sidenav-size-compact.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="mb-0 text-center text-muted mt-2">Compact</h5>
+                        </div>
+
+                        <div class="col-4" id="sidenav-size-condensed">
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-sidenav-size" id="layout-sidenav-size-condensed" value="condensed" />
+                                <label class="form-check-label p-0 w-100" for="layout-sidenav-size-condensed">
+                                    <img src="{{ asset('admin/assets/images/layouts/sidenav-size-condensed.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="mb-0 text-center text-muted mt-2">Condensed</h5>
+                        </div>
+
+                        <div class="col-4" id="sidenav-size-on-hover">
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-sidenav-size" id="layout-sidenav-size-small-hover" value="on-hover" />
+                                <label class="form-check-label p-0 w-100" for="layout-sidenav-size-small-hover">
+                                    <img src="{{ asset('admin/assets/images/layouts/sidenav-size-on-hover.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="mb-0 text-center text-muted mt-2">On Hover</h5>
+                        </div>
+
+                        <div class="col-4" id="sidenav-size-on-hover-active">
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-sidenav-size" id="layout-sidenav-size-small-hover-active" value="on-hover-active" />
+                                <label class="form-check-label p-0 w-100" for="layout-sidenav-size-small-hover-active">
+                                    <img src="{{ asset('admin/assets/images/layouts/sidenav-size-on-hover-active.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="mb-0 fs-base text-center text-muted mt-2">On Hover - Show</h5>
+                        </div>
+
+                        <div class="col-4" id="sidenav-size-offcanvas">
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-sidenav-size" id="layout-sidenav-size-offcanvas" value="offcanvas" />
+                                <label class="form-check-label p-0 w-100" for="layout-sidenav-size-offcanvas">
+                                    <img src="{{ asset('admin/assets/images/layouts/sidenav-size-offcanvas.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="mb-0 text-center text-muted mt-2">Offcanvas</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="width" class="p-3 border-bottom border-dashed">
+                    <h5 class="mb-3 fw-bold">Layout Width</h5>
+
+                    <div class="row g-3">
+                        <div class="col-4" id="width-fluid">
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-layout-width" id="layout-width-fluid" value="fluid" />
+                                <label class="form-check-label p-0 w-100" for="layout-width-fluid">
+                                    <img src="{{ asset('admin/assets/images/layouts/width-fluid.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="mb-0 text-center text-muted mt-2">Fluid</h5>
+                        </div>
+
+                        <div class="col-4" id="width-boxed">
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="data-layout-width" id="layout-width-boxed" value="boxed" />
+                                <label class="form-check-label p-0 w-100" for="layout-width-boxed">
+                                    <img src="{{ asset('admin/assets/images/layouts/width-boxed.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="mb-0 text-center text-muted mt-2">Boxed</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="dir" class="p-3 border-bottom border-dashed">
+                    <h5 class="mb-3 fw-bold">Layout Direction</h5>
+
+                    <div class="row g-3">
+                        <div class="col-4" id="dir-ltr">
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="dir" id="layout-dir-ltr" value="ltr" />
+                                <label class="form-check-label p-0 w-100" for="layout-dir-ltr">
+                                    <img src="{{ asset('admin/assets/images/layouts/dir-ltr.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="mb-0 text-center text-muted mt-2">LTR</h5>
+                        </div>
+
+                        <div class="col-4" id="dir-rtl">
+                            <div class="form-check sidebar-setting card-radio">
+                                <input class="form-check-input" type="radio" name="dir" id="layout-dir-rtl" value="rtl" />
+                                <label class="form-check-label p-0 w-100" for="layout-dir-rtl">
+                                    <img src="{{ asset('admin/assets/images/layouts/dir-rtl.png') }}" alt="layout-img" class="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 class="mb-0 text-center text-muted mt-2">RTL</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="position" class="p-3 border-bottom border-dashed">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="fw-bold mb-0">Layout Position</h5>
+
+                        <div class="d-flex gap-1">
+                            <div id="position-fixed">
+                                <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-fixed" value="fixed" />
+                                <label class="btn btn-sm btn-soft-warning w-sm" for="layout-position-fixed">Fixed</label>
+                            </div>
+                            <div id="position-scrollable">
+                                <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-scrollable" value="scrollable" />
+                                <label class="btn btn-sm btn-soft-warning w-sm ms-0" for="layout-position-scrollable">Scrollable</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sidenav-user" class="p-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">
+                            <label class="fw-bold m-0" for="sidebaruser-check">Sidebar User Info</label>
+                        </h5>
+                        <div class="form-check form-switch fs-lg">
+                            <input type="checkbox" class="form-check-input" name="sidebar-user" id="sidebaruser-check" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="offcanvas-footer border-top p-3 text-center">
+                <div class="row justify-content-end">
+                    <div class="col-6">
+                        <a href="#" class="btn btn-success fw-semibold py-2 w-100" target="_blank"><i class="ti ti-basket me-2 fs-md"></i> Buy Now</a>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-danger fw-semibold py-2 w-100" id="reset-layout"><i class="ti ti-refresh me-2 fs-md"></i> Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end offcanvas-->
+ <!-- Vendor js -->
+<script src="{{ asset('admin/assets/js/vendors.min.js') }}"></script>
+
+<!-- App js -->
+<script src="{{ asset('admin/assets/js/app.js') }}"></script>
+
+
+        <!-- Jquery for Datatables-->
+        <script src="{{ asset('admin/assets/plugins/jquery/jquery.min.js') }}"></script>
+
+        <!-- Datatables js -->
+        <script src="{{ asset('admin/assets/plugins/datatables/dataTables.min.js') }}"></script>
+        <script src="{{ asset('admin/assets/plugins/datatables/dataTables.bootstrap5.min.js') }}"></script>
+        <script src="{{ asset('admin/assets/plugins/datatables/dataTables.responsive.min.js') }}"></script>
+        <script src="{{ asset('admin/assets/plugins/datatables/responsive.bootstrap5.min.js') }}"></script>
+
+        <!-- Page js -->
+        <script src="{{ asset('admin/assets/js/pages/datatables-show-hide-columns.js') }}"></script>
+    </body>
+
+<!-- Mirrored from coderthemes.com/paces/bootstrap/tables-datatables-columns.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Jun 2026 10:00:03 GMT -->
+</html>
+
+
