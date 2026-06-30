@@ -818,6 +818,195 @@
 .featured-jobs-section {
     padding-top: 10px !important;
 }
+
+/* Fix desktop banner overlapping and spacing */
+.main-bnr {
+    padding-bottom: 0 !important;
+}
+.new-hero-banner-content {
+    margin-bottom: 70px; /* Space below search box */
+}
+.banner-media {
+    margin-bottom: 0;
+}
+.banner-main-media img {
+    vertical-align: bottom; /* Removes gap below image */
+}
+/* ==========================================================================
+   Mobile & Tablet Responsive Overrides
+   ========================================================================== */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+@media (max-width: 991px) {
+    /* 1. Global Spacing & Padding */
+    .section-full, .content-inner, .content-inner-1, .content-inner-2,
+    .why-choose-section, .featured-jobs-section, .immediate-openings-section, .top-companies-section {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+    
+    /* 2. Typography Hierarchy */
+    .new-hero-title {
+        font-size: 30px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 16px !important;
+    }
+    .section-title-3, .category-explore-title {
+        font-size: 26px !important;
+        line-height: 1.3 !important;
+        margin-bottom: 12px !important;
+    }
+    .new-hero-subtitle, .dz-text-2, .category-explore-subtitle, .feature-desc {
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+    }
+
+    /* 3. Hero Section Optimization */
+    .new-hero-banner {
+        padding: 40px 0 20px 0 !important;
+    }
+    .new-hero-banner-content {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0 15px !important;
+    }
+    .banner-main-media {
+        display: none !important; /* Hidden on mobile as requested */
+    }
+    .new-hero-badge {
+        margin: 0 auto 20px auto !important;
+        display: inline-flex !important;
+    }
+    
+    /* 4. Search Form Vertical Stacking */
+    .new-search-inputs {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+    .new-search-input-group {
+        width: 100% !important;
+        flex: none !important;
+    }
+    .new-search-btn {
+        width: 100% !important;
+        padding: 14px !important;
+        height: auto !important;
+    }
+    .new-search-tabs {
+        justify-content: center;
+    }
+
+    /* 5. Mobile Sliders (Converted from Grids) */
+    .mobile-slider {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        scroll-behavior: smooth !important;
+        gap: 16px !important;
+        padding-top: 20px !important; /* Added to prevent badges from clipping */
+        padding-bottom: 20px !important; /* Increased for shadow clearance */
+        -webkit-overflow-scrolling: touch;
+        align-items: stretch !important;
+        justify-content: flex-start !important; /* Prevent first card cutoff from bootstrap centering */
+        /* Negate container padding to allow edge-to-edge scrolling */
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    .mobile-slider::-webkit-scrollbar {
+        display: none;
+    }
+    .mobile-slider > * {
+        flex: 0 0 85% !important;
+        max-width: 85% !important;
+        width: 85% !important;
+        scroll-snap-align: center !important;
+        margin-bottom: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    /* Make Top Hiring Companies smaller cards as requested */
+    .top-companies-section .mobile-slider > * {
+        flex: 0 0 60% !important;
+        max-width: 60% !important;
+        width: 60% !important;
+    }
+    
+    .modern-job-card, .feature-card, .company-card, .cat-explore-card {
+        width: 100% !important;
+        margin-bottom: 0 !important;
+        padding: 24px 20px !important;
+        height: 100% !important;
+    }
+
+    /* 5.5 Slider Navigation Arrows */
+    .mobile-slider-controls {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+    .mobile-slider-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: white;
+        border: 1px solid #edf2f7;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .mobile-slider-btn:active {
+        background: var(--primary);
+        color: white;
+    }
+
+    /* 6. Buttons Full-Width */
+    .btn-apply, .btn-view-jobs, .btn-view-all, .btn-view-all-companies, .feature-link {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+        display: flex !important;
+    }
+    
+    /* Specific Job Card Adjustments */
+    .job-footer {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 16px !important;
+    }
+    .job-meta {
+        flex-direction: column !important;
+        gap: 8px !important;
+        align-items: flex-start !important;
+    }
+    .meta-item {
+        width: 100% !important;
+    }
+
+    /* 7. App Mockup Sizing */
+    .app-mockup-img {
+        max-width: 220px !important;
+        height: auto !important;
+    }
+    .mockup-bg-circle {
+        width: 280px !important;
+        height: 280px !important;
+    }
+}
 </style>
 
 <div class="page-content">
@@ -826,8 +1015,8 @@
   			<div class="bg-circle-bx"></div>
   			<div class="container">
   				<div class="row">
-  					<div class="col-lg-7">
-  						<div class="new-hero-banner-content" style="text-align: left; margin-top: -40px; margin-left: -80px; width: calc(100% + 80px); position: relative; z-index: 10;">
+  					<div class="col-lg-7 align-self-center">
+  						<div class="new-hero-banner-content" style="text-align: left; width: 100%; position: relative; z-index: 10; margin-top: -20px;">
   							<div class="new-hero-badge">
   								<img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="India">
   								India's All-in-One Job Platform
@@ -905,7 +1094,7 @@
   							</div>
   						</div>	
   					</div>
-  					<div class="col-lg-5">
+  					<div class="col-lg-5 align-self-end">
   						<div class="banner-media">
   							<div class="banner-main-media">
   								<img src="{{ asset('frontend/images/man4.png') }}" alt="">
@@ -934,9 +1123,9 @@
 		<div class="section-full bg-white" style="padding: 80px 0;">
 			<div class="container-fluid" style="padding: 0 50px;">
 				<div class="category-explore-section">
-					<div class="text-center">
-						<h2 class="category-explore-title">Explore Jobs by Category</h2>
-						<p class="category-explore-subtitle">Discover opportunities across every industry—from technology and healthcare to local services, freelance work, and government careers.</p>
+					<div class="section-head style-1 text-center">
+						<h2 class="section-title-3">Explore Jobs by Category</h2>
+						<p class="dz-text-2">Discover opportunities across every industry—from technology and healthcare to local services, freelance work, and government careers.</p>
 					</div>
 					
 					<div class="category-explore-grid">
@@ -1661,7 +1850,6 @@
 		<div class="section-full ai-toolkit-section content-inner-2" style="background-color: #f7fafc;">
 			<div class="container">
 				<div class="section-head style-1 text-center">
-					<h6>Intelligent Tools</h6>
 					<h2 class="section-title-3">AI Career Toolkit</h2>
 					<p class="dz-text-2">Supercharge your job search with our advanced AI tools designed to optimize your resume and help you land your dream job faster.</p>
 				</div>
@@ -1732,7 +1920,6 @@
 	<div class="section-full career-resources-section content-inner-2 bg-white">
 		<div class="container">
 			<div class="section-head style-1 text-center">
-				<h6>Knowledge Base</h6>
 				<h2 class="section-title-3">Career Resources</h2>
 				<p class="dz-text-2">Explore our comprehensive library of expert advice, guides, and tools to help you navigate every step of your career journey.</p>
 			</div>
@@ -2066,6 +2253,63 @@ $(document).ready(function() {
         e.preventDefault();
         $(this).toggleClass('active');
     });
+});
+</script>
+<!-- Mobile & Tablet Slider Initialization -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth <= 991) {
+        const sliderSelectors = [
+            '.category-explore-grid',
+            '.top-companies-section > .container > .row',
+            '.why-choose-section .feature-cards-row',
+            '.immediate-openings-section > .container > .row',
+            '.featured-jobs-section > .container > .row', // Direct child to avoid filter tabs
+            '.ai-toolkit-section .feature-cards-row',
+            '.career-resources-section .feature-cards-row'
+        ];
+        
+        sliderSelectors.forEach(selector => {
+            const container = document.querySelector(selector);
+            if (container) {
+                // Add the class defined in our mobile CSS
+                container.classList.add('mobile-slider');
+                
+                // Create Controls Wrapper
+                const controls = document.createElement('div');
+                controls.className = 'mobile-slider-controls';
+                
+                // Create Left Button
+                const leftBtn = document.createElement('button');
+                leftBtn.className = 'mobile-slider-btn';
+                leftBtn.innerHTML = '<i class="fa fa-arrow-left"></i>';
+                leftBtn.setAttribute('aria-label', 'Scroll left');
+                
+                // Create Right Button
+                const rightBtn = document.createElement('button');
+                rightBtn.className = 'mobile-slider-btn';
+                rightBtn.innerHTML = '<i class="fa fa-arrow-right"></i>';
+                rightBtn.setAttribute('aria-label', 'Scroll right');
+                
+                controls.appendChild(leftBtn);
+                controls.appendChild(rightBtn);
+                
+                // Insert controls right after the slider container
+                container.parentNode.insertBefore(controls, container.nextSibling);
+                
+                // Add click events for smooth scrolling
+                leftBtn.addEventListener('click', () => {
+                    const scrollAmount = container.clientWidth * 0.8;
+                    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+                
+                rightBtn.addEventListener('click', () => {
+                    const scrollAmount = container.clientWidth * 0.8;
+                    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+            }
+        });
+    }
 });
 </script>
 </body>

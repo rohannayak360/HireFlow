@@ -6,10 +6,10 @@
 					<div class="col-xl-3 col-md-9 col-12">
                         <div class="widget widget-logo style-1">
 							<div class="logo-footer style-1 logo-dark">
-                            	<img src="{{ asset('frontend/images/our company/websitelogo.png') }}" alt="HireFlow" style="max-height: 45px;">
+                            	<img src="{{ asset('frontend/images/our company/websitelogo_dark.png') }}" alt="HireFlow" style="max-height: 45px;">
 							</div>
 							<div class="logo-footer style-1 logo-white">
-								<img src="{{ asset('frontend/images/our company/websitelogo_dark.png') }}" alt="HireFlow" style="max-height: 45px;">
+								<img src="{{ asset('frontend/images/our company/websitelogo.png') }}" alt="HireFlow" style="max-height: 45px;">
 							</div>
 							
 							<p class="m-b30">HireFlow is India's premier all-in-one job platform connecting top talent with the best opportunities. Find jobs, hire talent, or grow your skills.</p> 
