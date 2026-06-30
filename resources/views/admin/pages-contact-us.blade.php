@@ -2897,7 +2897,7 @@
                                 <div class="card-body">
                                     <div class="row bg-light bg-opacity-50">
                                         <div class="col-12 py-2 text-center">
-                                            <iframe src="https://www.google.com/maps/embed/v1/place?q=Eiffel+Tower&amp;key=AIzaSyBSFRN6WWGYwmFi498qXXsD2UwkbmD74v4" style="width: 100%; height: 360px; overflow: hidden; border: 0"></iframe>
+                                            <iframe src="https://www.google.com/maps/embed/v1/place?q=Eiffel+Tower&amp;key={{ env('GOOGLE_MAPS_API_KEY', 'YOUR_GOOGLE_MAPS_API_KEY') }}" style="width: 100%; height: 360px; overflow: hidden; border: 0"></iframe>
                                         </div>
                                     </div>
 
