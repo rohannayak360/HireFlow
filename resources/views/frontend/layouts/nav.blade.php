@@ -24,8 +24,8 @@
                         <input type="checkbox">
                         <span class="mode-label"></span>
                     </a>
-                    <a href="{{ url('login') }}" class="site-button-link"><i class="fa fa-lock"></i> Login</a>
-                    <a href="{{ url('register') }}" class="site-button-link"><i class="fa fa-user"></i> Register</a>
+                    <a href="{{ route('login') }}" class="site-button-link"><i class="fa fa-lock"></i> Login</a>
+                    <a href="{{ route('register') }}" class="site-button-link"><i class="fa fa-user"></i> Register</a>
                     <a href="{{ url('company-post-jobs') }}" class="site-button"><i class="fa fa-briefcase"></i> Post a Job</a>
                 </div>
             </div>
